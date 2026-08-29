@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control | Logística, Servicio y Mantenimiento C.A.</title>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/L6xFm2Tt/loo-removebg-preview.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --azul-primary: #075DCC;
+            --azul-oscuro: #063B83;
+            --azul-profundo: #031F49;
+            --azul-suave: #EAF3FF;
+            --verde-principal: #00A96B;
+            --verde-oscuro: #008653;
+            --verde-claro: #11C985;
+            --blanco: #FFFFFF;
+            --fondo: #F5F8FC;
+            --texto-oscuro: #101828;
+            --gris-texto: #667085;
+            --borde: #E4EBF5;
+            --sombra-card: 0 4px 20px rgba(7, 93, 204, 0.06);
+            --radio: 16px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--fondo); color: var(--texto-oscuro); min-height: 100vh; }
+
+        /* VISTA LOGIN */
+        .login-overlay {
+            position: fixed; inset: 0; background: linear-gradient(135deg, var(--azul-profundo), var(--azul-oscuro));
+            display: flex; align-items: center; justify-content: center; z-index: 9999; padding: 20px;
+        }
+        .login-card {
+            background: var(--blanco); width: 100%; max-width: 420px; border-radius: 24px; padding: 40px 30px;
+            box-shadow: 0 25px 50px rgba(3, 31, 73, 0.3); text-align: center;
+        }
+        .login-logo { width: 75px; height: 75px; margin: 0 auto 18px; border-radius: 50%; padding: 4px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+        .login-card h2 { font-size: 22px; color: var(--azul-profundo); font-weight: 800; margin-bottom: 6px; }
+        .login-card p { font-size: 13px; color: var(--gris-texto); margin-bottom: 25px; }
+        
+        .form-group { text-align: left; margin-bottom: 18px; }
+        .form-label { display: block; font-size: 12.5px; font-weight: 700; color: var(--azul-profundo); margin-bottom: 6px; }
+        .input-control {
+            width: 100%; padding: 13px 15px; border-radius: 12px; border: 1.5px solid var(--borde);
+            background: #FAFCFE; font-size: 14px; outline: none; transition: 0.2s;
+        }
+        .input-control:focus { border-color: var(--azul-primary); background: var(--blanco); box-shadow: 0 0 0 3px rgba(7, 93, 204, 0.1); }
+        .btn-primary {
+            width: 100%; padding: 14px; background: linear-gradient(135deg, var(--azul-primary), var(--azul-oscuro));
+            border: none; border-radius: 12px; color: white; font-weight: 700; font-size: 14px; cursor: pointer;
+            box-shadow: 0 10px 20px rgba(7, 93, 204, 0.2); transition: 0.2s;
+        }
+        .btn-primary:hover { opacity: 0.95; transform: translateY(-1px); }
+
+        /* DASHBOARD LAYOUT */
+        .dashboard-container { display: flex; min-height: 100vh; }
+        
+        /* SIDEBAR */
+        .sidebar {
+            width: 260px; background: var(--blanco); border-right: 1px solid var(--borde);
+            display: flex; flex-direction: column; justify-content: space-between; padding: 24px 18px;
+        }
+        .sidebar-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 30px; padding: 0 8px; }
+        .sidebar-logo { width: 44px; height: 44px; border-radius: 50%; }
+        .sidebar-title { font-size: 14px; font-weight: 800; color: var(--azul-profundo); line-height: 1.2; }
+        .sidebar-sub { font-size: 9px; font-weight: 800; color: var(--verde-principal); letter-spacing: 1px; }
+
+        .nav-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+        .nav-item-btn {
+            display: flex; align-items: center; gap: 12px; width: 100%; padding: 12px 16px; border-radius: 12px;
+            background: transparent; border: none; font-size: 13.5px; font-weight: 600; color: var(--gris-texto);
+            cursor: pointer; transition: 0.2s; text-align: left;
+        }
+        .nav-item-btn:hover { background: var(--azul-suave); color: var(--azul-primary); }
+        .nav-item-btn.active { background: var(--azul-suave); color: var(--azul-primary); font-weight: 700; }
+
+        .user-widget {
+            padding: 14px; background: var(--azul-suave); border-radius: 14px; display: flex;
+            align-items: center; justify-content: space-between;
+        }
+        .user-info-text { font-size: 13px; font-weight: 700; color: var(--azul-profundo); }
+        .user-info-badge { font-size: 10px; color: var(--verde-oscuro); font-weight: 800; }
+        .btn-icon { background: none; border: none; cursor: pointer; font-size: 16px; color: var(--azul-primary); padding: 4px; }
+
+        /* MAIN CONTENT */
+        .main-content { flex: 1; display: flex; flex-direction: column; overflow-y: auto; height: 100vh; }
+        .topbar {
+            background: var(--blanco); padding: 18px 32px; border-bottom: 1px solid var(--borde);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .topbar h1 { font-size: 20px; font-weight: 800; color: var(--azul-profundo); }
+
+        .view-content { padding: 30px; display: none; }
+        .view-content.active { display: block; }
+
+        /* STATS CARDS */
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-bottom: 25px; }
+        .stat-card {
+            background: var(--blanco); padding: 20px; border-radius: var(--radio); border: 1px solid var(--borde);
+            box-shadow: var(--sombra-card); display: flex; justify-content: space-between; align-items: center;
+        }
+        .stat-val { font-size: 26px; font-weight: 800; color: var(--azul-profundo); margin-top: 4px; }
+        .stat-label { font-size: 12px; color: var(--gris-texto); font-weight: 600; text-transform: uppercase; }
+        .stat-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+
+        /* TABLAS Y TARJETAS */
+        .card-table { background: var(--blanco); border-radius: var(--radio); border: 1px solid var(--borde); box-shadow: var(--sombra-card); overflow: hidden; }
+        .table-header { padding: 18px 24px; border-bottom: 1px solid var(--borde); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+        .table-title { font-size: 16px; font-weight: 800; color: var(--azul-profundo); }
+        
+        .filter-select { padding: 8px 12px; border-radius: 10px; border: 1px solid var(--borde); font-size: 13px; outline: none; background: #FAFCFE; }
+
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th { background: #FAFCFE; padding: 14px 20px; font-size: 12px; font-weight: 700; color: var(--gris-texto); text-transform: uppercase; border-bottom: 1px solid var(--borde); }
+        td { padding: 16px 20px; font-size: 13.5px; border-bottom: 1px solid var(--borde); vertical-align: middle; }
+        tr:hover { background-color: #FAFDFB; }
+
+        /* BADGES / ETIQUETAS */
+        .badge {
+            display: inline-block; padding: 6px 12px; border-radius: 100px; font-size: 11.5px; font-weight: 700; text-align: center;
+        }
+        .badge-nueva { background: var(--azul-suave); color: var(--azul-primary); }
+        .badge-respondida { background: #FFF4E5; color: #D97706; }
+        .badge-rechazada { background: #FDE8E8; color: #DC2626; }
+        .badge-aceptada { background: #E6F7EF; color: var(--verde-principal); }
+
+        .tag-select {
+            padding: 5px 8px; border-radius: 8px; font-size: 12px; font-weight: 600; border: 1px solid var(--borde);
+            background: white; outline: none; cursor: pointer;
+        }
+
+        .btn-action-delete {
+            background: #FEE2E2; color: #DC2626; border: none; padding: 6px 10px; border-radius: 8px;
+            font-size: 12px; font-weight: 600; cursor: pointer; transition: 0.2s;
+        }
+        .btn-action-delete:hover { background: #FCA5A5; }
+        .btn-action-restore {
+            background: #E0E7FF; color: var(--azul-primary); border: none; padding: 6px 10px; border-radius: 8px;
+            font-size: 12px; font-weight: 600; cursor: pointer;
+        }
+
+        /* MODAL */
+        .modal-backdrop {
+            position: fixed; inset: 0; background: rgba(3, 31, 73, 0.4); backdrop-filter: blur(4px);
+            display: none; align-items: center; justify-content: center; z-index: 10000; padding: 20px;
+        }
+        .modal-box {
+            background: var(--blanco); border-radius: 20px; width: 100%; max-width: 480px; padding: 28px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .modal-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .modal-head h3 { font-size: 18px; color: var(--azul-profundo); font-weight: 800; }
+        .close-modal { background: none; border: none; font-size: 20px; cursor: pointer; color: var(--gris-texto); }
+
+        .banner-papelera {
+            background: #FFFBEB; border: 1px solid #FDE68A; color: #92400E; padding: 12px 18px; border-radius: 12px;
+            font-size: 13px; font-weight: 600; margin-bottom: 18px; display: flex; align-items: center; gap: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loginOverlay" class="login-overlay">
+        <div class="login-card">
+            <img class="login-logo" src="https://i.postimg.cc/L6xFm2Tt/loo-removebg-preview.png" alt="Logo">
+            <h2>Panel Corporativo</h2>
+            <p>Logística, Servicio y Mantenimiento C.A.</p>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label class="form-label">Usuario</label>
+                    <input type="text" id="loginUser" class="input-control" placeholder="Ingrese usuario" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Contraseña</label>
+                    <input type="password" id="loginPass" class="input-control" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-primary" style="margin-top: 10px;">Ingresar al Panel</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="dashboard-container" id="dashboardApp" style="display: none;">
+        
+        <aside class="sidebar">
+            <div>
+                <div class="sidebar-brand">
+                    <img class="sidebar-logo" src="https://i.postimg.cc/L6xFm2Tt/loo-removebg-preview.png" alt="Logo">
+                    <div>
+                        <div class="sidebar-title">Corporación LSM</div>
+                        <div class="sidebar-sub">Gestión Cotizaciones</div>
+                    </div>
+                </div>
+
+                <ul class="nav-list">
+                    <li>
+                        <button class="nav-item-btn active" onclick="switchView('cotizaciones')">
+                            📋 Solicitudes Activas
+                        </button>
+                    </li>
+                    <li>
+                        <button class="nav-item-btn" onclick="switchView('papelera')">
+                            🗑️ Papelera (Auto 60d)
+                        </button>
+                    </li>
+                    <li id="menuUsuariosWrapper" style="display: none;">
+                        <button class="nav-item-btn" onclick="switchView('usuarios')">
+                            👥 Gestión de Usuarios
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="user-widget">
+                <div>
+                    <div class="user-info-text" id="currentUserName">Admin</div>
+                    <div class="user-info-badge" id="currentUserRole">Administrador</div>
+                </div>
+                <div>
+                    <button class="btn-icon" title="Ajustes de Cuenta" onclick="openProfileModal()">⚙️</button>
+                    <button class="btn-icon" title="Cerrar Sesión" onclick="logout()">🚪</button>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <h1 id="topbarTitle">Solicitudes de Cotización</h1>
+                <a href="contacto.html" target="_blank" class="nav-item-btn" style="width: auto; background: var(--azul-suave); color: var(--azul-primary); font-weight: 700;">
+                    🌐 Ver Formulario Web
+                </a>
+            </header>
+
+            <div id="view-cotizaciones" class="view-content active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div>
+                            <div class="stat-label">Nuevas</div>
+                            <div class="stat-val" id="countNuevas">0</div>
+                        </div>
+                        <div class="stat-icon" style="background: var(--azul-suave); color: var(--azul-primary);">📬</div>
+                    </div>
+                    <div class="stat-card">
+                        <div>
+                            <div class="stat-label">Respondidas</div>
+                            <div class="stat-val" id="countResp">0</div>
+                        </div>
+                        <div class="stat-icon" style="background: #FFF4E5; color: #D97706;">💬</div>
+                    </div>
+                    <div class="stat-card">
+                        <div>
+                            <div class="stat-label">Aceptadas</div>
+                            <div class="stat-val" id="countAcept">0</div>
+                        </div>
+                        <div class="stat-icon" style="background: #E6F7EF; color: var(--verde-principal);">✅</div>
+                    </div>
+                    <div class="stat-card">
+                        <div>
+                            <div class="stat-label">Rechazadas</div>
+                            <div class="stat-val" id="countRech">0</div>
+                        </div>
+                        <div class="stat-icon" style="background: #FDE8E8; color: #DC2626;">❌</div>
+                    </div>
+                </div>
+
+                <div class="card-table">
+                    <div class="table-header">
+                        <div class="table-title">Listado de Cotizaciones</div>
+                        <select id="filterEstado" class="filter-select" onchange="renderCotizaciones()">
+                            <option value="TODOS">Todos los estados</option>
+                            <option value="Nueva cotizacion">Nueva cotización</option>
+                            <option value="Cotizacion respondida">Cotización respondida</option>
+                            <option value="Cotizacion Aceptada">Cotización Aceptada</option>
+                            <option value="Cotizacion rechazada">Cotización rechazada</option>
+                        </select>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Cliente / Contacto</th>
+                                <th>Área</th>
+                                <th>Proyecto / Mensaje</th>
+                                <th>Estado / Etiqueta</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cotizacionesTableBody">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="view-papelera" class="view-content">
+                <div class="banner-papelera">
+                    ⚠️ <strong>Información de Auto-Purga:</strong> Las cotizaciones en la papelera se eliminan de forma permanente e irreversible tras cumplir 60 días desde su descarte.
+                </div>
+                <div class="card-table">
+                    <div class="table-header">
+                        <div class="table-title">Papelera de Reciclaje</div>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Fecha Descarte</th>
+                                <th>Cliente</th>
+                                <th>Servicio</th>
+                                <th>Mensaje</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="papeleraTableBody">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="view-usuarios" class="view-content">
+                <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 24px;">
+                    <div class="card-table" style="padding: 24px; height: fit-content;">
+                        <h3 style="font-size: 16px; color: var(--azul-profundo); margin-bottom: 16px; font-weight: 800;">Crear Nuevo Usuario</h3>
+                        <form id="newUserForm">
+                            <div class="form-group">
+                                <label class="form-label">Nombre Completo</label>
+                                <input type="text" id="newNombre" class="input-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Usuario</label>
+                                <input type="text" id="newUsuario" class="input-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Contraseña</label>
+                                <input type="password" id="newPassword" class="input-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Rol Asignado</label>
+                                <select id="newRol" class="input-control" required>
+                                    <option value="Colaborador">Colaborador</option>
+                                    <option value="Administrador">Administrador</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn-primary">Registrar Usuario</button>
+                        </form>
+                    </div>
+
+                    <div class="card-table">
+                        <div class="table-header">
+                            <div class="table-title">Usuarios Registrados</div>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Usuario</th>
+                                    <th>Rol</th>
+                                    <th>Fecha Registro</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody id="usuariosTableBody">
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <div id="profileModal" class="modal-backdrop">
+        <div class="modal-box">
+            <div class="modal-head">
+                <h3>Ajustes de Perfil</h3>
+                <button class="close-modal" onclick="closeProfileModal()">&times;</button>
+            </div>
+            <form id="profileForm">
+                <div class="form-group">
+                    <label class="form-label">Nombre</label>
+                    <input type="text" id="profileNombre" class="input-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Nombre de Usuario</label>
+                    <input type="text" id="profileUser" class="input-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Nueva Contraseña (Opcional)</label>
+                    <input type="password" id="profileNewPass" class="input-control" placeholder="Dejar en blanco si no desea cambiar">
+                </div>
+                <div class="form-group" style="border-top: 1px dashed var(--borde); padding-top: 14px;">
+                    <label class="form-label" style="color: #DC2626;">Confirmar Contraseña Actual *</label>
+                    <input type="password" id="profileCurrentPass" class="input-control" placeholder="Requerido para guardar cambios" required>
+                </div>
+                <button type="submit" class="btn-primary" style="margin-top: 10px;">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let sessionToken = localStorage.getItem('token');
+        let currentUser = JSON.parse(localStorage.getItem('user') || 'null');
+        let cotizacionesData = [];
+        let papeleraData = [];
+
+        // Inicializar interfaz
+        if (sessionToken && currentUser) {
+            initApp();
+        }
+
+        // LOGIN
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const usuario = document.getElementById('loginUser').value;
+            const password = document.getElementById('loginPass').value;
+
+            try {
+                const res = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ usuario, password })
+                });
+                const data = await res.json();
+                if (res.ok) {
+                    sessionToken = data.token;
+                    currentUser = data.user;
+                    localStorage.setItem('token', sessionToken);
+                    localStorage.setItem('user', JSON.stringify(currentUser));
+                    initApp();
+                } else {
+                    alert(data.error || 'Credenciales incorrectas');
+                }
+            } catch (err) {
+                alert('Error al conectar con el servidor.');
+            }
+        });
+
+        function initApp() {
+            document.getElementById('loginOverlay').style.display = 'none';
+            document.getElementById('dashboardApp').style.display = 'flex';
+            document.getElementById('currentUserName').textContent = currentUser.nombre;
+            document.getElementById('currentUserRole').textContent = currentUser.rol;
+
+            if (currentUser.rol === 'Administrador') {
+                document.getElementById('menuUsuariosWrapper').style.display = 'block';
+            } else {
+                document.getElementById('menuUsuariosWrapper').style.display = 'none';
+            }
+
+            loadCotizaciones();
+            loadPapelera();
+            if (currentUser.rol === 'Administrador') loadUsuarios();
+        }
+
+        function logout() {
+            fetch('/api/logout', { method: 'POST', headers: { 'x-auth-token': sessionToken } });
+            localStorage.clear();
+            location.reload();
+        }
+
+        // VISTAS
+        function switchView(viewName) {
+            document.querySelectorAll('.view-content').forEach(v => v.classList.remove('active'));
+            document.querySelectorAll('.nav-item-btn').forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(`view-${viewName}`).classList.add('active');
+            
+            const titles = {
+                cotizaciones: 'Solicitudes de Cotización',
+                papelera: 'Papelera de Cotizaciones (Auto 60 Días)',
+                usuarios: 'Administración de Usuarios y Roles'
+            };
+            document.getElementById('topbarTitle').textContent = titles[viewName];
+
+            if (viewName === 'cotizaciones') loadCotizaciones();
+            if (viewName === 'papelera') loadPapelera();
+            if (viewName === 'usuarios') loadUsuarios();
+        }
+
+        // CARGA DE COTIZACIONES
+        async function loadCotizaciones() {
+            try {
+                const res = await fetch('/api/cotizaciones', { headers: { 'x-auth-token': sessionToken } });
+                if (res.status === 401) return logout();
+                cotizacionesData = await res.json();
+                renderCotizaciones();
+                updateStats();
+            } catch (e) { console.error(e); }
+        }
+
+        function renderCotizaciones() {
+            const filter = document.getElementById('filterEstado').value;
+            const tbody = document.getElementById('cotizacionesTableBody');
+            tbody.innerHTML = '';
+
+            const filtered = filter === 'TODOS' 
+                ? cotizacionesData 
+                : cotizacionesData.filter(c => c.estado === filter);
+
+            if (filtered.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6" style="text-align:center; color: var(--gris-texto); padding: 30px;">No hay solicitudes registradas en este estado.</td></tr>';
+                return;
+            }
+
+            filtered.forEach(c => {
+                const badgeClass = {
+                    'Nueva cotizacion': 'badge-nueva',
+                    'Cotizacion respondida': 'badge-respondida',
+                    'Cotizacion rechazada': 'badge-rechazada',
+                    'Cotizacion Aceptada': 'badge-aceptada'
+                }[c.estado] || 'badge-nueva';
+
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td style="white-space: nowrap; color: var(--gris-texto); font-size:12.5px;">${new Date(c.creado_en).toLocaleDateString()}</td>
+                    <td>
+                        <strong>${c.nombre}</strong><br>
+                        <small style="color:var(--azul-primary);">${c.email}</small><br>
+                        <small style="color:var(--gris-texto);">${c.telefono} ${c.empresa ? '· ' + c.empresa : ''}</small>
+                    </td>
+                    <td><span style="font-weight:600; color: var(--azul-oscuro);">${c.servicio}</span></td>
+                    <td style="max-width: 250px; font-size: 13px; line-height: 1.4;">${c.mensaje}</td>
+                    <td>
+                        <select class="tag-select" onchange="cambiarEstado(${c.id}, this.value)">
+                            <option value="Nueva cotizacion" ${c.estado === 'Nueva cotizacion' ? 'selected':''}>Nueva cotizacion</option>
+                            <option value="Cotizacion respondida" ${c.estado === 'Cotizacion respondida' ? 'selected':''}>Cotizacion respondida</option>
+                            <option value="Cotizacion Aceptada" ${c.estado === 'Cotizacion Aceptada' ? 'selected':''}>Cotizacion Aceptada</option>
+                            <option value="Cotizacion rechazada" ${c.estado === 'Cotizacion rechazada' ? 'selected':''}>Cotizacion rechazada</option>
+                        </select>
+                    </td>
+                    <td>
+                        <button class="btn-action-delete" onclick="moverAPapelera(${c.id})">🗑️ Papelera</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function updateStats() {
+            document.getElementById('countNuevas').textContent = cotizacionesData.filter(c => c.estado === 'Nueva cotizacion').length;
+            document.getElementById('countResp').textContent = cotizacionesData.filter(c => c.estado === 'Cotizacion respondida').length;
+            document.getElementById('countAcept').textContent = cotizacionesData.filter(c => c.estado === 'Cotizacion Aceptada').length;
+            document.getElementById('countRech').textContent = cotizacionesData.filter(c => c.estado === 'Cotizacion rechazada').length;
+        }
+
+        async function cambiarEstado(id, nuevoEstado) {
+            await fetch(`/api/cotizaciones/${id}/estado`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json', 'x-auth-token': sessionToken },
+                body: JSON.stringify({ estado: nuevoEstado })
+            });
+            loadCotizaciones();
+        }
+
+        async function moverAPapelera(id) {
+            if (!confirm('¿Mover esta solicitud a la papelera?')) return;
+            await fetch(`/api/cotizaciones/${id}/papelera`, {
+                method: 'PATCH',
+                headers: { 'x-auth-token': sessionToken }
+            });
+            loadCotizaciones();
+            loadPapelera();
+        }
+
+        // PAPELERA
+        async function loadPapelera() {
+            try {
+                const res = await fetch('/api/papelera', { headers: { 'x-auth-token': sessionToken } });
+                papeleraData = await res.json();
+                const tbody = document.getElementById('papeleraTableBody');
+                tbody.innerHTML = '';
+
+                if (papeleraData.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; color: var(--gris-texto); padding: 30px;">La papelera está vacía.</td></tr>';
+                    return;
+                }
+
+                papeleraData.forEach(c => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td style="font-size:12.5px;">${new Date(c.fecha_eliminacion).toLocaleDateString()}</td>
+                        <td><strong>${c.nombre}</strong><br><small>${c.email}</small></td>
+                        <td>${c.servicio}</td>
+                        <td style="max-width:250px;">${c.mensaje}</td>
+                        <td>
+                            <button class="btn-action-restore" onclick="restaurar(${c.id})">Restaurar</button>
+                            ${currentUser.rol === 'Administrador' ? `<button class="btn-action-delete" style="margin-left:6px;" onclick="eliminarDefinitivo(${c.id})">Eliminar Definitivo</button>` : ''}
+                        </td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            } catch (e) { console.error(e); }
+        }
+
+        async function restaurar(id) {
+            await fetch(`/api/cotizaciones/${id}/restaurar`, {
+                method: 'PATCH',
+                headers: { 'x-auth-token': sessionToken }
+            });
+            loadCotizaciones();
+            loadPapelera();
+        }
+
+        async function eliminarDefinitivo(id) {
+            if (!confirm('¿Eliminar definitivamente esta cotización? Esta acción no se puede deshacer.')) return;
+            await fetch(`/api/cotizaciones/${id}`, {
+                method: 'DELETE',
+                headers: { 'x-auth-token': sessionToken }
+            });
+            loadPapelera();
+        }
+
+        // USUARIOS (ADMIN)
+        async function loadUsuarios() {
+            const res = await fetch('/api/usuarios', { headers: { 'x-auth-token': sessionToken } });
+            const users = await res.json();
+            const tbody = document.getElementById('usuariosTableBody');
+            tbody.innerHTML = '';
+
+            users.forEach(u => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><strong>${u.nombre}</strong></td>
+                    <td>${u.usuario}</td>
+                    <td><span class="badge ${u.rol === 'Administrador' ? 'badge-nueva' : 'badge-aceptada'}">${u.rol}</span></td>
+                    <td>${new Date(u.creado_en).toLocaleDateString()}</td>
+                    <td>
+                        ${u.id !== currentUser.id ? `<button class="btn-action-delete" onclick="eliminarUsuario(${u.id})">Eliminar</button>` : '<small style="color:var(--gris-texto);">Tú</small>'}
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        document.getElementById('newUserForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const body = {
+                nombre: document.getElementById('newNombre').value,
+                usuario: document.getElementById('newUsuario').value,
+                password: document.getElementById('newPassword').value,
+                rol: document.getElementById('newRol').value
+            };
+            const res = await fetch('/api/usuarios', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'x-auth-token': sessionToken },
+                body: JSON.stringify(body)
+            });
+            const data = await res.json();
+            if (res.ok) {
+                alert('Usuario creado con éxito');
+                document.getElementById('newUserForm').reset();
+                loadUsuarios();
+            } else {
+                alert(data.error || 'Error al crear usuario');
+            }
+        });
+
+        async function eliminarUsuario(id) {
+            if (!confirm('¿Seguro que deseas eliminar este usuario?')) return;
+            await fetch(`/api/usuarios/${id}`, {
+                method: 'DELETE',
+                headers: { 'x-auth-token': sessionToken }
+            });
+            loadUsuarios();
+        }
+
+        // MODAL PERFIL / CAMBIO DE CREDENCIALES
+        function openProfileModal() {
+            document.getElementById('profileNombre').value = currentUser.nombre;
+            document.getElementById('profileUser').value = currentUser.usuario;
+            document.getElementById('profileNewPass').value = '';
+            document.getElementById('profileCurrentPass').value = '';
+            document.getElementById('profileModal').style.display = 'flex';
+        }
+
+        function closeProfileModal() {
+            document.getElementById('profileModal').style.display = 'none';
+        }
+
+        document.getElementById('profileForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const body = {
+                nuevoNombre: document.getElementById('profileNombre').value,
+                nuevoUsuario: document.getElementById('profileUser').value,
+                nuevoPassword: document.getElementById('profileNewPass').value,
+                passwordActual: document.getElementById('profileCurrentPass').value
+            };
+
+            const res = await fetch('/api/perfil', {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json', 'x-auth-token': sessionToken },
+                body: JSON.stringify(body)
+            });
+            const data = await res.json();
+            if (res.ok) {
+                alert('Perfil actualizado con éxito');
+                currentUser = data.user;
+                localStorage.setItem('user', JSON.stringify(currentUser));
+                document.getElementById('currentUserName').textContent = currentUser.nombre;
+                closeProfileModal();
+            } else {
+                alert(data.error || 'Error al actualizar credenciales');
+            }
+        });
+    </script>
+</body>
+</html>

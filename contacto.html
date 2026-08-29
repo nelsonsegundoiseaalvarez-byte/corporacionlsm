@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Corporacion Logística, Servicio y Mantenimiento C.A. Solicitud de cotización para servicios generales, movilidad vertical, telecomunicaciones y más.">
+    <meta name="keywords" content="Corporacion Logística, Servicio y Mantenimiento C.A., cotización Venezuela, servicios generales, movilidad vertical, ascensores">
+    <meta name="author" content="Corporacion Logística, Servicio y Mantenimiento C.A.">
+    <meta name="robots" content="index, follow">
+
+    <title>Solicitar Cotización | Corporacion Corporacion Logística, Servicio y Mantenimiento C.A.</title>
+
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/L6xFm2Tt/loo-removebg-preview.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --azul: #075DCC;
+            --azul-oscuro: #063B83;
+            --azul-profundo: #031F49;
+            --azul-claro: #EAF3FF;
+            --verde: #00A96B;
+            --verde-oscuro: #008653;
+            --verde-claro: #11C985;
+            --blanco: #FFFFFF;
+            --fondo: #F5F8FC;
+            --negro: #101828;
+            --gris-texto: #667085;
+            --borde: rgba(7, 93, 204, 0.12);
+            --sombra: 0 20px 60px rgba(7, 93, 204, 0.08);
+            --sombra-hover: 0 30px 80px rgba(7, 93, 204, 0.16);
+            --radio: 28px;
+            --max-width: 1240px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Inter", Arial, sans-serif;
+            color: var(--negro);
+            background:
+                radial-gradient(circle at 10% 10%, rgba(7, 93, 204, 0.07), transparent 30%),
+                radial-gradient(circle at 90% 20%, rgba(0, 169, 107, 0.07), transparent 30%),
+                var(--fondo);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        button, input, textarea, select { font-family: inherit; }
+        img { max-width: 100%; display: block; }
+
+        .container {
+            width: min(calc(100% - 40px), var(--max-width));
+            margin: 0 auto;
+        }
+
+        /* HEADER */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            background: rgba(255, 255, 255, 0.90);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(7, 93, 204, 0.08);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            min-height: 64px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            flex-shrink: 0;
+            transition: 0.3s ease;
+        }
+        .brand:hover { transform: translateY(-2px); }
+
+        .brand-logo {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            object-fit: contain;
+            background: white;
+            padding: 3px;
+            box-shadow: 0 10px 30px rgba(7, 93, 204, 0.13);
+            border: 2px solid rgba(7, 93, 204, 0.08);
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .brand-name {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--azul-oscuro);
+        }
+
+        .brand-subtitle {
+            margin-top: 4px;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: var(--verde);
+            text-transform: uppercase;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-link {
+            position: relative;
+            padding: 12px 17px;
+            border-radius: 14px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #263957;
+            transition: 0.25s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--azul);
+            background: var(--azul-claro);
+            transform: translateY(-2px);
+        }
+
+        .nav-cta {
+            color: white !important;
+            background: linear-gradient(135deg, var(--azul), var(--azul-oscuro));
+            box-shadow: 0 15px 30px rgba(7, 93, 204, 0.20);
+        }
+
+        .menu-toggle {
+            display: none;
+            width: 44px;
+            height: 44px;
+            border: none;
+            border-radius: 12px;
+            background: var(--azul-claro);
+            color: var(--azul);
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        /* HERO */
+        .contact-hero {
+            padding: 80px 0 45px;
+            position: relative;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 100px;
+            background: rgba(0, 169, 107, 0.12);
+            color: var(--verde);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .eyebrow-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--verde);
+        }
+
+        .hero-title {
+            max-width: 900px;
+            font-size: clamp(38px, 5.5vw, 68px);
+            line-height: 1.05;
+            letter-spacing: -2px;
+            font-weight: 800;
+            color: var(--azul-oscuro);
+        }
+
+        .hero-title span {
+            background: linear-gradient(90deg, var(--azul), var(--verde));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-description {
+            max-width: 800px;
+            margin-top: 20px;
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--gris-texto);
+        }
+
+        /* SECCIÓN */
+        .contact-section {
+            padding: 20px 0 100px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.85fr 1.45fr;
+            gap: 28px;
+            align-items: stretch;
+        }
+
+        /* CARD IZQUIERDA */
+        .info-card {
+            padding: 40px;
+            border-radius: var(--radio);
+            background: linear-gradient(145deg, var(--azul-profundo), var(--azul-oscuro));
+            color: white;
+            box-shadow: var(--sombra);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .info-logo {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            padding: 6px;
+            background: white;
+            object-fit: contain;
+            margin-bottom: 24px;
+        }
+
+        .info-title {
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .info-description {
+            font-size: 14px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 25px;
+        }
+
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+        }
+
+        .info-item:last-child { border-bottom: none; }
+
+        .info-icon {
+            width: 38px;
+            height: 38px;
+            min-width: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.10);
+            font-size: 16px;
+        }
+
+        .info-item strong {
+            display: block;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 3px;
+        }
+
+        .info-item span, .info-item a {
+            display: block;
+            font-size: 13.5px;
+            color: white;
+        }
+
+        /* FORMULARIO CARD */
+        .form-card {
+            padding: 42px;
+            border-radius: var(--radio);
+            background: var(--blanco);
+            border: 1px solid var(--borde);
+            box-shadow: var(--sombra);
+        }
+
+        .form-heading {
+            margin-bottom: 25px;
+        }
+
+        .form-heading h2 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--azul-oscuro);
+            margin-bottom: 6px;
+        }
+
+        .form-heading p {
+            color: var(--gris-texto);
+            font-size: 14px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .form-group { margin-bottom: 18px; }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--azul-oscuro);
+        }
+
+        .required { color: #e63946; }
+
+        .form-control {
+            width: 100%;
+            border: 1px solid #dce5f0;
+            border-radius: 14px;
+            padding: 14px 16px;
+            outline: none;
+            background: #fbfdff;
+            color: var(--negro);
+            font-size: 14px;
+            transition: 0.25s ease;
+        }
+
+        .form-control:focus {
+            background: white;
+            border-color: var(--azul);
+            box-shadow: 0 0 0 4px rgba(7, 93, 204, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .char-counter {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 5px;
+            color: var(--gris-texto);
+            font-size: 11px;
+        }
+
+        .privacy-check {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin: 5px 0 20px;
+        }
+
+        .privacy-check input {
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+            accent-color: var(--azul);
+        }
+
+        .privacy-check label {
+            font-size: 12.5px;
+            line-height: 1.5;
+            color: var(--gris-texto);
+        }
+
+        .submit-btn {
+            width: 100%;
+            border: none;
+            border-radius: 16px;
+            padding: 16px 24px;
+            background: linear-gradient(135deg, var(--azul), var(--azul-oscuro));
+            color: white;
+            font-size: 15px;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 15px 30px rgba(7, 93, 204, 0.22);
+            transition: 0.25s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 35px rgba(7, 93, 204, 0.30);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .form-message {
+            margin-top: 18px;
+            padding: 14px 18px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            display: none;
+        }
+
+        .form-message.success {
+            display: block;
+            background: #e6f7ef;
+            color: var(--verde-oscuro);
+            border: 1px solid rgba(0, 169, 107, 0.3);
+        }
+
+        .form-message.error {
+            display: block;
+            background: #fde8e8;
+            color: #b91c1c;
+            border: 1px solid rgba(220, 38, 38, 0.3);
+        }
+
+        /* WHATSAPP & FOOTER */
+        .whatsapp-float {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--verde);
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 15px 35px rgba(0, 169, 107, 0.35);
+            z-index: 900;
+            transition: 0.25s ease;
+        }
+        .whatsapp-float:hover { transform: translateY(-4px) scale(1.05); }
+
+        footer {
+            background: linear-gradient(135deg, var(--azul-profundo), var(--azul-oscuro));
+            color: white;
+            padding: 40px 0;
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .footer-brand { display: flex; align-items: center; gap: 12px; }
+        .footer-logo { width: 46px; height: 46px; border-radius: 50%; padding: 4px; background: white; }
+
+        @media (max-width: 900px) {
+            .contact-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .menu-toggle { display: block; }
+            .nav-menu { display: none; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="brand">
+                    <img class="brand-logo" src="https://i.postimg.cc/L6xFm2Tt/loo-removebg-preview.png" alt="Corporación LSM">
+                    <div class="brand-text">
+                        <span class="brand-name">Corporacion LSM</span>
+                        <span class="brand-subtitle">Corporacion Logística, Servicio y Mantenimiento C.A.</span>
+                    </div>
+                </a>
+
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="somos.html" class="nav-link">Nosotros</a>
+                    <a href="informacion.html" class="nav-link">Servicios</a>
+                    <a href="contacto.html" class="nav-link nav-cta">Solicitar Cotización</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <div class="container">
+                <div class="eyebrow">
+                    <span class="eyebrow-dot"></span>
+                    Atención Corporativa
+                </div>
+                <h1 class="hero-title">
+                    Solicita tu <span>Cotización</span>
+                </h1>
+                <p class="hero-description">
+                    Desarrollamos propuestas operativas, técnicas y estratégicas adaptadas a la medida de tu organización con cobertura nacional.
+                </p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <aside class="info-card">
+                        <div>
+                            <img class="info-logo" src="https://i.postimg.cc/L6xFm2Tt/loo-removebg-preview.png" alt="Corporacion Logística, Servicio y Mantenimiento C.A.">
+                            <h2 class="info-title">Corporacion Logística, Servicio y Mantenimiento C.A.</h2>
+                            <p class="info-description">
+                                Soluciones integrales para cada proyecto, con cobertura nacional y una metodología orientada a la continuidad operativa, eficiencia y seguridad.
+                            </p>
+                        </div>
+                        <div class="info-list">
+                            <div class="info-item">
+                                <div class="info-icon">📍</div>
+                                <div>
+                                    <strong>Ubicación</strong>
+                                    <span>Maracay, Estado Aragua, Venezuela.</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon">🏢</div>
+                                <div>
+                                    <strong>Dirección</strong>
+                                    <span>CC y Profesional White Point, piso 2, of. P2-01.</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon">📞</div>
+                                <div>
+                                    <strong>Teléfonos</strong>
+                                    <span>0422-3009616 / 0424-3435659</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon">✉</div>
+                                <div>
+                                    <strong>Correo</strong>
+                                    <span>proyectos@lsmcorporacion.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <div class="form-card">
+                        <div class="form-heading">
+                            <h2>Solicita información de tu proyecto</h2>
+                            <p>Completa el formulario y te responderemos a la brevedad con una cotización detallada.</p>
+                        </div>
+
+                        <form id="quoteForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="nombre">Nombre y Apellido <span class="required">*</span></label>
+                                    <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Ej. Carlos Mendoza" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="email">Correo electrónico <span class="required">*</span></label>
+                                    <input class="form-control" type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="telefono">Número de teléfono <span class="required">*</span></label>
+                                    <input class="form-control" type="tel" id="telefono" name="telefono" placeholder="Ej. 0424-0000000" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="empresa">Empresa <span style="color:#9baabd; font-weight:normal;">(opcional)</span></label>
+                                    <input class="form-control" type="text" id="empresa" name="empresa" placeholder="Nombre de su empresa">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="servicio">Área de interés</label>
+                                <select class="form-control" id="servicio" name="servicio">
+                                    <option value="">Seleccione un área</option>
+                                    <option value="Servicios Generales">Servicios Generales</option>
+                                    <option value="Movilidad Vertical">Movilidad Vertical</option>
+                                    <option value="Telecomunicaciones">Telecomunicaciones</option>
+                                    <option value="Seguridad Integral">Seguridad Integral</option>
+                                    <option value="Importación / Exportación">Importación / Exportación</option>
+                                    <option value="Aula Educativa">Aula Educativa</option>
+                                    <option value="Logística">Logística</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="mensaje">Cuéntanos sobre tu proyecto <span class="required">*</span></label>
+                                <textarea class="form-control" id="mensaje" name="mensaje" minlength="12" maxlength="890" placeholder="Describe brevemente el servicio o cotización que necesitas..." required></textarea>
+                                <div class="char-counter"><span id="charCount">0</span> / 890 caracteres</div>
+                            </div>
+
+                            <div class="privacy-check">
+                                <input type="checkbox" id="privacy" required>
+                                <label for="privacy">Confirmo que los datos suministrados son correctos y autorizo a Corporacion Logística, Servicio y Mantenimiento C.A. a contactarme.</label>
+                            </div>
+
+                            <button class="submit-btn" id="submitBtn" type="submit">
+                                <span id="btnText">Enviar Solicitud de Cotización</span>
+                            </button>
+
+                            <div class="form-message" id="formMessage"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <a class="whatsapp-float" href="https://wa.me/584223009616" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">☎</a>
+
+    <footer>
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <img class="footer-logo" src="https://i.postimg.cc/L6xFm2Tt/loo-removebg-preview.png" alt="Logo">
+                <span>© <span id="year"></span> Corporacion Logística, Servicio y Mantenimiento C.A. Todos los derechos reservados.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const textarea = document.getElementById("mensaje");
+        const charCount = document.getElementById("charCount");
+        textarea.addEventListener("input", () => {
+            charCount.textContent = textarea.value.length;
+        });
+
+        const form = document.getElementById("quoteForm");
+        const message = document.getElementById("formMessage");
+        const submitBtn = document.getElementById("submitBtn");
+        const btnText = document.getElementById("btnText");
+
+        function showMessage(text, type) {
+            message.textContent = text;
+            message.className = "form-message " + type;
+        }
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const data = {
+                nombre: document.getElementById("nombre").value.trim(),
+                email: document.getElementById("email").value.trim(),
+                telefono: document.getElementById("telefono").value.trim(),
+                empresa: document.getElementById("empresa").value.trim(),
+                servicio: document.getElementById("servicio").value,
+                mensaje: document.getElementById("mensaje").value.trim()
+            };
+
+            if (!data.nombre || !data.email || !data.telefono || !data.mensaje) {
+                showMessage("Por favor, llena los campos requeridos.", "error");
+                return;
+            }
+
+            submitBtn.disabled = true;
+            btnText.textContent = "Procesando envío...";
+
+            try {
+                const response = await fetch("/api/cotizaciones", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data)
+                });
+
+                const resData = await response.json();
+
+                if (response.ok) {
+                    showMessage("¡Su solicitud de cotización fue enviada de forma exitosa! Nuestro equipo la revisará y se pondrá en contacto a la brevedad.", "success");
+                    form.reset();
+                    charCount.textContent = "0";
+                } else {
+                    showMessage(resData.error || "Ocurrió un error al enviar la solicitud.", "error");
+                }
+            } catch (err) {
+                showMessage("No fue posible conectar con el servidor. Intente más tarde.", "error");
+            } finally {
+                submitBtn.disabled = false;
+                btnText.textContent = "Enviar Solicitud de Cotización";
+            }
+        });
+    </script>
+</body>
+</html>

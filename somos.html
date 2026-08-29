@@ -1,0 +1,3081 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Nosotros | Corporación LSM
+    </title>
+
+    <meta
+        name="description"
+        content="Conoce la historia, filosofía, organización y propuesta corporativa de Corporación LSM."
+    >
+
+    <meta
+        name="keywords"
+        content="Corporación LSM, nosotros, historia, misión, visión, mantenimiento, logística, servicios, Maracay, Aragua, Venezuela"
+    >
+
+    <meta
+        name="author"
+        content="Corporación Logística, Servicio y Mantenimiento C.A."
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <meta
+        name="theme-color"
+        content="#075dcc"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="im/loo.icon"
+    >
+
+    <style>
+
+        :root {
+
+            --azul: #075dcc;
+            --azul-oscuro: #063b83;
+            --azul-profundo: #031f49;
+
+            --azul-claro: #eaf3ff;
+
+            --verde: #00a96b;
+            --verde-oscuro: #008653;
+            --verde-claro: #11c985;
+
+            --blanco: #ffffff;
+
+            --gris-fondo: #f5f8fc;
+            --gris-borde: rgba(7,93,204,.11);
+
+            --texto: #101828;
+            --texto-secundario: #667085;
+
+            --sombra:
+                0 20px 50px rgba(3,31,73,.09);
+
+            --sombra-hover:
+                0 30px 70px rgba(3,31,73,.16);
+
+        }
+
+
+        * {
+
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+
+        body {
+
+            font-family:
+                "Segoe UI",
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            color: var(--texto);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f5f9ff 0%,
+                    #ffffff 48%,
+                    #effbf6 100%
+                );
+
+            overflow-x: hidden;
+
+        }
+
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            width: 500px;
+            height: 500px;
+
+            top: -250px;
+            right: -200px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(0,169,107,.12),
+                    transparent 70%
+                );
+
+            z-index: -1;
+
+            pointer-events: none;
+
+        }
+
+
+        body::after {
+
+            content: "";
+
+            position: fixed;
+
+            width: 550px;
+            height: 550px;
+
+            bottom: -300px;
+            left: -250px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(7,93,204,.10),
+                    transparent 70%
+                );
+
+            z-index: -1;
+
+            pointer-events: none;
+
+        }
+
+
+        img {
+
+            max-width: 100%;
+            display: block;
+
+        }
+
+
+        a {
+
+            text-decoration: none;
+            color: inherit;
+
+        }
+
+
+        /* =====================================================
+           HEADER
+        ====================================================== */
+
+        header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            background:
+                rgba(255,255,255,.92);
+
+            backdrop-filter:
+                blur(18px);
+
+            -webkit-backdrop-filter:
+                blur(18px);
+
+            border-bottom:
+                1px solid
+                rgba(7,93,204,.08);
+
+        }
+
+
+        .navbar {
+
+            max-width: 1250px;
+
+            min-height: 78px;
+
+            margin: auto;
+
+            padding:
+                10px 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+        }
+
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            text-decoration: none;
+
+        }
+
+
+        .logo img {
+
+            width: 55px;
+            height: 55px;
+
+            object-fit: contain;
+
+            border-radius: 50%;
+
+            filter:
+                drop-shadow(
+                    0 7px 12px
+                    rgba(7,93,204,.20)
+                );
+
+            transition:
+                transform .3s ease;
+
+        }
+
+
+        .logo:hover img {
+
+            transform:
+                rotate(-5deg)
+                scale(1.05);
+
+        }
+
+
+        .logo-text {
+
+            display: flex;
+
+            flex-direction: column;
+
+        }
+
+
+        .logo-text strong {
+
+            color: var(--azul);
+
+            font-size: 18px;
+
+            line-height: 1.1;
+
+        }
+
+
+        .logo-text span {
+
+            color: var(--texto-secundario);
+
+            font-size: 9px;
+
+            letter-spacing: .7px;
+
+            margin-top: 4px;
+
+        }
+
+
+        nav {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+        }
+
+
+        nav a {
+
+            color: #344054;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            padding:
+                10px 14px;
+
+            border-radius: 10px;
+
+            transition:
+                .25s ease;
+
+        }
+
+
+        nav a:hover {
+
+            color: var(--azul);
+
+            background:
+                rgba(7,93,204,.07);
+
+        }
+
+
+        nav a.activo {
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--azul),
+                    var(--azul-oscuro)
+                );
+
+            box-shadow:
+                0 8px 20px
+                rgba(7,93,204,.22);
+
+        }
+
+
+        .btn-menu {
+
+            display: none;
+
+            width: 43px;
+            height: 43px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            background: var(--azul);
+
+            color: white;
+
+            font-size: 20px;
+
+            cursor: pointer;
+
+        }
+
+
+        /* =====================================================
+           CONTENEDOR
+        ====================================================== */
+
+        .contenedor {
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding:
+                0 25px;
+
+        }
+
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .hero {
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding:
+                80px 25px 70px;
+
+            display: grid;
+
+            grid-template-columns:
+                1.05fr .95fr;
+
+            align-items: center;
+
+            gap: 65px;
+
+        }
+
+
+        .hero-content {
+
+            animation:
+                aparecer .7s ease both;
+
+        }
+
+
+        .etiqueta {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding:
+                8px 16px;
+
+            border-radius: 50px;
+
+            background:
+                rgba(7,93,204,.08);
+
+            color: var(--azul);
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .etiqueta::before {
+
+            content: "";
+
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background:
+                var(--verde);
+
+            box-shadow:
+                0 0 0 5px
+                rgba(0,169,107,.10);
+
+        }
+
+
+        .hero h1 {
+
+            margin-top: 22px;
+
+            font-size:
+                clamp(42px, 6vw, 68px);
+
+            line-height: 1.02;
+
+            letter-spacing: -3px;
+
+            color:
+                var(--azul-profundo);
+
+        }
+
+
+        .hero h1 span {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--azul),
+                    var(--verde)
+                );
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+
+        }
+
+
+        .hero p {
+
+            margin-top: 24px;
+
+            max-width: 680px;
+
+            color:
+                var(--texto-secundario);
+
+            font-size: 17px;
+
+            line-height: 1.75;
+
+        }
+
+
+        /* =====================================================
+           HERO VISUAL
+        ====================================================== */
+
+        .hero-visual {
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            perspective: 1000px;
+
+        }
+
+
+        .visual-card {
+
+            position: relative;
+
+            width: 360px;
+            height: 360px;
+
+            border-radius: 70px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #ffffff,
+                    #edf4fa
+                );
+
+            border:
+                1px solid
+                rgba(7,93,204,.12);
+
+            box-shadow:
+                25px 35px 65px
+                rgba(3,31,73,.14),
+
+                inset
+                0 1px 0
+                rgba(255,255,255,.95);
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            transform:
+                rotateY(-9deg)
+                rotateX(6deg);
+
+            transition:
+                transform .45s ease;
+
+        }
+
+
+        .visual-card:hover {
+
+            transform:
+                rotateY(0)
+                rotateX(0)
+                translateY(-8px);
+
+        }
+
+
+        .visual-card img {
+
+            width: 235px;
+            height: 235px;
+
+            object-fit: contain;
+
+            border-radius: 50%;
+
+            filter:
+                drop-shadow(
+                    0 25px 25px
+                    rgba(3,31,73,.20)
+                );
+
+        }
+
+
+        .floating-tag {
+
+            position: absolute;
+
+            padding:
+                10px 14px;
+
+            border-radius: 14px;
+
+            background:
+                rgba(255,255,255,.96);
+
+            border:
+                1px solid
+                rgba(7,93,204,.10);
+
+            box-shadow:
+                0 15px 30px
+                rgba(3,31,73,.12);
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            color:
+                var(--azul-profundo);
+
+        }
+
+
+        .tag-one {
+
+            top: 35px;
+            left: -30px;
+
+        }
+
+
+        .tag-two {
+
+            right: -25px;
+            bottom: 55px;
+
+        }
+
+
+        .tag-two span {
+
+            color:
+                var(--verde);
+
+        }
+
+
+        /* =====================================================
+           SECCIONES
+        ====================================================== */
+
+        section {
+
+            position: relative;
+
+        }
+
+
+        .section-header {
+
+            max-width: 780px;
+
+            margin:
+                35px auto 45px;
+
+            text-align: center;
+
+        }
+
+
+        .mini {
+
+            color:
+                var(--verde);
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.2px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .section-header h2 {
+
+            margin-top: 9px;
+
+            color:
+                var(--azul-profundo);
+
+            font-size:
+                clamp(30px, 4vw, 45px);
+
+            line-height: 1.15;
+
+            letter-spacing: -1.5px;
+
+        }
+
+
+        .section-header p {
+
+            margin-top: 13px;
+
+            color:
+                var(--texto-secundario);
+
+            font-size: 15px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =====================================================
+           HISTORIA
+        ====================================================== */
+
+        .historia {
+
+            padding:
+                30px 0 90px;
+
+        }
+
+
+        .historia-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 22px;
+
+        }
+
+
+        .historia-card {
+
+            position: relative;
+
+            overflow: hidden;
+
+            padding:
+                32px;
+
+            border-radius: 26px;
+
+            background:
+                rgba(255,255,255,.94);
+
+            border:
+                1px solid
+                var(--gris-borde);
+
+            box-shadow:
+                var(--sombra);
+
+            transition:
+                transform .35s ease,
+                box-shadow .35s ease;
+
+        }
+
+
+        .historia-card:hover {
+
+            transform:
+                translateY(-8px);
+
+            box-shadow:
+                var(--sombra-hover);
+
+        }
+
+
+        .historia-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 4px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--azul),
+                    var(--verde)
+                );
+
+        }
+
+
+        .fase {
+
+            color:
+                var(--verde);
+
+            font-size: 10px;
+
+            font-weight: 900;
+
+            letter-spacing: 1.2px;
+
+        }
+
+
+        .historia-card h3 {
+
+            margin-top: 8px;
+
+            color:
+                var(--azul-profundo);
+
+            font-size: 24px;
+
+        }
+
+
+        .historia-card p {
+
+            margin-top: 15px;
+
+            color:
+                var(--texto-secundario);
+
+            font-size: 14px;
+
+            line-height: 1.75;
+
+        }
+
+
+        .historia-list {
+
+            list-style: none;
+
+            margin-top: 18px;
+
+            display: grid;
+
+            gap: 10px;
+
+        }
+
+
+        .historia-list li {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 10px;
+
+            color:
+                #475467;
+
+            font-size: 13px;
+
+            line-height: 1.55;
+
+        }
+
+
+        .historia-list li::before {
+
+            content: "✓";
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            width: 19px;
+            height: 19px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(0,169,107,.10);
+
+            color:
+                var(--verde);
+
+            font-size: 11px;
+
+            font-weight: 900;
+
+        }
+
+
+        /* =====================================================
+           FILOSOFÍA
+        ====================================================== */
+
+        .filosofia {
+
+            padding:
+                80px 0;
+
+        }
+
+
+        .filosofia-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+
+        }
+
+
+        .filosofia-card {
+
+            padding:
+                30px 25px;
+
+            border-radius: 25px;
+
+            background:
+                rgba(255,255,255,.94);
+
+            border:
+                1px solid
+                var(--gris-borde);
+
+            box-shadow:
+                var(--sombra);
+
+            transition:
+                .35s ease;
+
+        }
+
+
+        .filosofia-card:hover {
+
+            transform:
+                translateY(-7px);
+
+            box-shadow:
+                var(--sombra-hover);
+
+        }
+
+
+        .filosofia-icon {
+
+            width: 58px;
+            height: 58px;
+
+            border-radius: 18px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    var(--azul),
+                    var(--azul-oscuro)
+                );
+
+            color: white;
+
+            font-size: 25px;
+
+            box-shadow:
+                0 12px 25px
+                rgba(7,93,204,.20);
+
+        }
+
+
+        .filosofia-card:nth-child(2)
+        .filosofia-icon {
+
+            background:
+                linear-gradient(
+                    145deg,
+                    var(--verde),
+                    var(--verde-oscuro)
+                );
+
+        }
+
+
+        .filosofia-card h3 {
+
+            margin-top: 20px;
+
+            color:
+                var(--azul-profundo);
+
+            font-size: 21px;
+
+        }
+
+
+        .filosofia-card p {
+
+            margin-top: 11px;
+
+            color:
+                var(--texto-secundario);
+
+            font-size: 14px;
+
+            line-height: 1.75;
+
+        }
+
+
+        .objetivo {
+
+            grid-column:
+                1 / -1;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--azul-profundo),
+                    var(--azul)
+                );
+
+            color: white;
+
+        }
+
+
+        .objetivo h3 {
+
+            color: white;
+
+        }
+
+
+        .objetivo p {
+
+            color:
+                rgba(255,255,255,.76);
+
+        }
+
+
+        /* =====================================================
+           ORGANIZACIÓN
+        ====================================================== */
+
+        .organizacion {
+
+            padding:
+                80px 0;
+
+        }
+
+
+        .organizacion-panel {
+
+            padding:
+                45px 35px;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(7,93,204,.07),
+                    rgba(0,169,107,.08)
+                );
+
+            border:
+                1px solid
+                rgba(7,93,204,.09);
+
+        }
+
+
+        .organizacion-intro {
+
+            max-width: 760px;
+
+            margin:
+                0 auto 40px;
+
+            text-align: center;
+
+        }
+
+
+        .organizacion-intro h2 {
+
+            color:
+                var(--azul-profundo);
+
+            font-size:
+                clamp(28px, 4vw, 40px);
+
+            letter-spacing: -1px;
+
+        }
+
+
+        .organizacion-intro p {
+
+            margin-top: 10px;
+
+            color:
+                var(--texto-secundario);
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+        }
+
+
+        .niveles {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 15px;
+
+        }
+
+
+        .nivel {
+
+            padding:
+                23px 18px;
+
+            border-radius: 18px;
+
+            background:
+                rgba(255,255,255,.92);
+
+            border:
+                1px solid
+                rgba(7,93,204,.08);
+
+            text-align: center;
+
+            transition:
+                .3s ease;
+
+        }
+
+
+        .nivel:hover {
+
+            transform:
+                translateY(-5px);
+
+            box-shadow:
+                0 15px 30px
+                rgba(3,31,73,.09);
+
+        }
+
+
+        .nivel-numero {
+
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            width: 42px;
+            height: 42px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(7,93,204,.08);
+
+            color:
+                var(--azul);
+
+            font-size: 12px;
+
+            font-weight: 900;
+
+        }
+
+
+        .nivel h3 {
+
+            margin-top: 13px;
+
+            color:
+                var(--azul-profundo);
+
+            font-size: 15px;
+
+        }
+
+
+        .nivel p {
+
+            margin-top: 7px;
+
+            color:
+                var(--texto-secundario);
+
+            font-size: 12px;
+
+            line-height: 1.5;
+
+        }
+
+
+        /* =====================================================
+           PLANIFICACIÓN
+        ====================================================== */
+
+        .planificacion {
+
+            padding:
+                80px 0;
+
+        }
+
+
+        .planificacion-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 15px;
+
+        }
+
+
+        .plan-card {
+
+            padding:
+                25px 20px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(255,255,255,.94);
+
+            border:
+                1px solid
+                var(--gris-borde);
+
+            box-shadow:
+                var(--sombra);
+
+            transition:
+                .3s ease;
+
+        }
+
+
+        .plan-card:hover {
+
+            transform:
+                translateY(-6px);
+
+            box-shadow:
+                var(--sombra-hover);
+
+        }
+
+
+        .plan-card strong {
+
+            display: block;
+
+            color:
+                var(--azul);
+
+            font-size: 15px;
+
+        }
+
+
+        .plan-card p {
+
+            margin-top: 9px;
+
+            color:
+                var(--texto-secundario);
+
+            font-size: 13px;
+
+            line-height: 1.65;
+
+        }
+
+
+        /* =====================================================
+           COBERTURA
+        ====================================================== */
+
+        .cobertura {
+
+            padding:
+                80px 0;
+
+        }
+
+
+        .cobertura-card {
+
+            position: relative;
+
+            overflow: hidden;
+
+            padding:
+                50px 35px;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--azul-profundo),
+                    var(--azul)
+                );
+
+            box-shadow:
+                0 25px 60px
+                rgba(3,31,73,.20);
+
+            text-align: center;
+
+        }
+
+
+        .cobertura-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 330px;
+            height: 330px;
+
+            right: -150px;
+            top: -190px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                rgba(255,255,255,.14);
+
+            box-shadow:
+                0 0 0 45px
+                rgba(255,255,255,.025),
+
+                0 0 0 90px
+                rgba(255,255,255,.018);
+
+        }
+
+
+        .cobertura-card h2 {
+
+            position: relative;
+
+            color: white;
+
+            font-size:
+                clamp(28px, 4vw, 42px);
+
+            letter-spacing: -1px;
+
+        }
+
+
+        .cobertura-card p {
+
+            position: relative;
+
+            max-width: 780px;
+
+            margin:
+                14px auto 0;
+
+            color:
+                rgba(255,255,255,.76);
+
+            font-size: 15px;
+
+            line-height: 1.75;
+
+        }
+
+
+        .direccion {
+
+            position: relative;
+
+            display: inline-flex;
+
+            margin-top: 25px;
+
+            padding:
+                12px 18px;
+
+            border-radius: 14px;
+
+            background:
+                rgba(255,255,255,.10);
+
+            border:
+                1px solid
+                rgba(255,255,255,.14);
+
+            color: white;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+        }
+
+
+        /* =====================================================
+           CTA
+        ====================================================== */
+
+        .cta {
+
+            padding:
+                0 0 90px;
+
+        }
+
+
+        .cta-card {
+
+            padding:
+                48px 30px;
+
+            text-align: center;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(7,93,204,.07),
+                    rgba(0,169,107,.08)
+                );
+
+            border:
+                1px solid
+                rgba(7,93,204,.09);
+
+        }
+
+
+        .cta-card h2 {
+
+            color:
+                var(--azul-profundo);
+
+            font-size:
+                clamp(28px, 4vw, 40px);
+
+        }
+
+
+        .cta-card p {
+
+            max-width: 680px;
+
+            margin:
+                12px auto 25px;
+
+            color:
+                var(--texto-secundario);
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+        }
+
+
+        .btn {
+
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 9px;
+
+            padding:
+                14px 24px;
+
+            border-radius: 13px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--azul),
+                    var(--azul-oscuro)
+                );
+
+            color: white;
+
+            font-size: 14px;
+
+            font-weight: 800;
+
+            box-shadow:
+                0 12px 25px
+                rgba(7,93,204,.20);
+
+            transition:
+                .3s ease;
+
+        }
+
+
+        .btn:hover {
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 18px 30px
+                rgba(7,93,204,.28);
+
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        footer {
+
+            background:
+                var(--azul-profundo);
+
+            color: white;
+
+            padding:
+                38px 25px;
+
+        }
+
+
+        .footer-inner {
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 25px;
+
+        }
+
+
+        .footer-brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+        }
+
+
+        .footer-brand img {
+
+            width: 48px;
+            height: 48px;
+
+            object-fit: contain;
+
+            border-radius: 50%;
+
+        }
+
+
+        .footer-brand strong {
+
+            display: block;
+
+            font-size: 15px;
+
+        }
+
+
+        .footer-brand span {
+
+            display: block;
+
+            margin-top: 4px;
+
+            color:
+                rgba(255,255,255,.65);
+
+            font-size: 11px;
+
+        }
+
+
+        .copyright {
+
+            color:
+                rgba(255,255,255,.50);
+
+            font-size: 12px;
+
+        }
+
+
+        /* =====================================================
+           ANIMACIONES
+        ====================================================== */
+
+        @keyframes aparecer {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(25px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+
+            }
+
+        }
+
+
+        .revelar {
+
+            opacity: 0;
+
+            transform:
+                translateY(25px);
+
+            transition:
+                opacity .7s ease,
+                transform .7s ease;
+
+        }
+
+
+        .revelar.visible {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+
+        }
+
+
+        /* =====================================================
+           TABLET
+        ====================================================== */
+
+        @media (max-width: 1000px) {
+
+            .hero {
+
+                grid-template-columns: 1fr;
+
+                text-align: center;
+
+            }
+
+
+            .hero p {
+
+                margin-left: auto;
+                margin-right: auto;
+
+            }
+
+
+            .hero-visual {
+
+                order: -1;
+
+            }
+
+
+            .visual-card {
+
+                width: 290px;
+                height: 290px;
+
+            }
+
+
+            .visual-card img {
+
+                width: 185px;
+                height: 185px;
+
+            }
+
+
+            .filosofia-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+
+            .objetivo {
+
+                grid-column:
+                    1 / -1;
+
+            }
+
+
+            .niveles {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+
+            .planificacion-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+        }
+
+
+        /* =====================================================
+           MÓVIL
+        ====================================================== */
+
+        @media (max-width: 700px) {
+
+            .navbar {
+
+                padding:
+                    10px 17px;
+
+            }
+
+
+            .logo img {
+
+                width: 48px;
+                height: 48px;
+
+            }
+
+
+            .logo-text strong {
+
+                font-size: 15px;
+
+            }
+
+
+            .logo-text span {
+
+                font-size: 7px;
+
+            }
+
+
+            .btn-menu {
+
+                display: flex;
+
+                align-items: center;
+                justify-content: center;
+
+            }
+
+
+            nav {
+
+                display: none;
+
+                position: absolute;
+
+                top: 72px;
+
+                left: 15px;
+                right: 15px;
+
+                padding: 12px;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                background:
+                    rgba(255,255,255,.97);
+
+                backdrop-filter:
+                    blur(15px);
+
+                border-radius: 18px;
+
+                box-shadow:
+                    0 20px 50px
+                    rgba(3,31,73,.15);
+
+                border:
+                    1px solid
+                    var(--gris-borde);
+
+            }
+
+
+            nav.abierto {
+
+                display: flex;
+
+            }
+
+
+            nav a {
+
+                text-align:
+                    center;
+
+            }
+
+
+            .hero {
+
+                padding:
+                    50px 18px 45px;
+
+            }
+
+
+            .hero h1 {
+
+                font-size: 42px;
+
+                letter-spacing:
+                    -2px;
+
+            }
+
+
+            .hero p {
+
+                font-size: 15px;
+
+            }
+
+
+            .visual-card {
+
+                width: 230px;
+                height: 230px;
+
+                border-radius: 50px;
+
+            }
+
+
+            .visual-card img {
+
+                width: 145px;
+                height: 145px;
+
+            }
+
+
+            .floating-tag {
+
+                font-size: 9px;
+
+                padding:
+                    8px 10px;
+
+            }
+
+
+            .tag-one {
+
+                left: -10px;
+                top: 20px;
+
+            }
+
+
+            .tag-two {
+
+                right: -10px;
+                bottom: 30px;
+
+            }
+
+
+            .contenedor {
+
+                padding:
+                    0 17px;
+
+            }
+
+
+            .historia-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .filosofia-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .objetivo {
+
+                grid-column:
+                    auto;
+
+            }
+
+
+            .organizacion-panel {
+
+                padding:
+                    35px 20px;
+
+            }
+
+
+            .niveles {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .planificacion-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .cobertura-card {
+
+                padding:
+                    40px 20px;
+
+            }
+
+
+            .direccion {
+
+                display: block;
+
+                line-height: 1.6;
+
+            }
+
+
+            .footer-inner {
+
+                flex-direction:
+                    column;
+
+                text-align:
+                    center;
+
+            }
+
+        }
+
+
+        @media (max-width: 400px) {
+
+            .hero h1 {
+
+                font-size: 36px;
+
+            }
+
+
+            .section-header h2 {
+
+                font-size: 29px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header>
+
+        <div class="navbar">
+
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+
+                <img
+                    src="https://i.postimg.cc/L6xFm2Tt/loo-removebg-preview.png"
+                    alt="Logo Corporación LSM"
+                >
+
+                <div class="logo-text">
+
+                    <strong>
+                        Corporación LSM
+                    </strong>
+
+                    <span>
+                        CORPORACION LOGÍSTICA, SERVICIO Y MANTENIMIENTO C.A
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <button
+                class="btn-menu"
+                id="btnMenu"
+                aria-label="Abrir menú"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+
+            <nav id="menu">
+
+                <a href="index.html">
+                    Inicio
+                </a>
+
+                <a
+                    href="informacion.html"
+                >
+                    Servicios
+                </a>
+
+                <a
+                    href="somos.html"
+                    class="activo"
+                >
+                    Nosotros
+                </a>
+
+                <a href="contacto.html">
+                    Contacto
+                </a>
+
+                <a href="contacto.html#formulario">
+                    Solicitar cotización
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="hero">
+
+
+        <div class="hero-content">
+
+            <span class="etiqueta">
+                Corporación LSM
+            </span>
+
+
+            <h1>
+
+                Experiencia,
+                <span>integración</span>
+                y compromiso.
+
+            </h1>
+
+
+            <p>
+
+                Somos una organización orientada a desarrollar
+                soluciones integrales para infraestructura,
+                mantenimiento, movilidad vertical,
+                telecomunicaciones, seguridad, logística
+                y capacitación.
+
+            </p>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+            <div
+                class="visual-card"
+                id="visualCard"
+            >
+
+                <span class="floating-tag tag-one">
+                    Gestión de activos
+                </span>
+
+
+                <img
+                    src="https://i.postimg.cc/L6xFm2Tt/loo-removebg-preview.png"
+                    alt="Corporación LSM"
+                >
+
+
+                <span class="floating-tag tag-two">
+
+                    <span>●</span>
+
+                    Operaciones integrales
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <main class="contenedor">
+
+
+        <!-- =================================================
+             HISTORIA
+        ================================================== -->
+
+        <section class="historia">
+
+            <div class="section-header revelar">
+
+                <span class="mini">
+                    Nuestra evolución
+                </span>
+
+                <h2>
+                    De la especialización
+                    a una corporación integral.
+                </h2>
+
+                <p>
+
+                    La evolución de la organización parte de
+                    la experiencia técnica en movilidad vertical
+                    y avanza hacia un modelo corporativo de
+                    mantenimiento integral y soporte operacional.
+
+                </p>
+
+            </div>
+
+
+            <div class="historia-grid">
+
+
+                <article class="historia-card revelar">
+
+                    <span class="fase">
+                        FASE 01 · EL ORIGEN
+                    </span>
+
+                    <h3>
+                        Ascensores Oriente
+                    </h3>
+
+                    <p>
+
+                        Especialización técnica en movilidad
+                        vertical, ascensores y montacargas,
+                        con construcción progresiva de
+                        experiencia y reputación operacional.
+
+                    </p>
+
+
+                    <ul class="historia-list">
+
+                        <li>
+                            Especialización en ascensores
+                            y montacargas.
+                        </li>
+
+                        <li>
+                            Rigor operacional bajo normativa
+                            venezolana COVENIN.
+                        </li>
+
+                        <li>
+                            Construcción de reputación
+                            en sectores industrial y comercial.
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+
+                <article class="historia-card revelar">
+
+                    <span class="fase">
+                        FASE 02 · LA EVOLUCIÓN
+                    </span>
+
+                    <h3>
+                        Corporación LSM
+                    </h3>
+
+                    <p>
+
+                        Reingeniería estratégica orientada a
+                        integrar capacidades técnicas, logísticas
+                        y operativas dentro de una propuesta
+                        corporativa.
+
+                    </p>
+
+
+                    <ul class="historia-list">
+
+                        <li>
+                            Expansión hacia siete unidades
+                            de negocio.
+                        </li>
+
+                        <li>
+                            Incorporación de logística
+                            corporativa.
+                        </li>
+
+                        <li>
+                            Soporte operacional con alcance
+                            nacional.
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FILOSOFÍA
+        ================================================== -->
+
+        <section class="filosofia">
+
+            <div class="section-header revelar">
+
+                <span class="mini">
+                    Filosofía institucional
+                </span>
+
+                <h2>
+                    El propósito que
+                    guía nuestra operación.
+                </h2>
+
+                <p>
+
+                    Seguridad, gestión de activos y mejora
+                    continua forman parte del enfoque
+                    institucional de Corporación LSM.
+
+                </p>
+
+            </div>
+
+
+            <div class="filosofia-grid">
+
+
+                <article class="filosofia-card revelar">
+
+                    <div class="filosofia-icon">
+                        ◎
+                    </div>
+
+                    <h3>
+                        Misión
+                    </h3>
+
+                    <p>
+
+                        Soluciones integrales y de calidad
+                        a la medida de cada proyecto,
+                        garantizando la seguridad de nuestros
+                        colaboradores y la satisfacción total
+                        de nuestros clientes.
+
+                    </p>
+
+                </article>
+
+
+
+                <article class="filosofia-card revelar">
+
+                    <div class="filosofia-icon">
+                        ◉
+                    </div>
+
+                    <h3>
+                        Visión
+                    </h3>
+
+                    <p>
+
+                        Ser un referente consolidado en el
+                        mercado, destacando por nuestro
+                        profesionalismo, mejoramiento continuo
+                        y excelencia en la prestación de servicios.
+
+                    </p>
+
+                </article>
+
+
+
+                <article class="filosofia-card objetivo revelar">
+
+                    <div class="filosofia-icon">
+                        ◆
+                    </div>
+
+                    <h3>
+                        Objetivo general
+                    </h3>
+
+                    <p>
+
+                        Diseñar propuestas acertadas y ejecutar
+                        planes efectivos para la correcta gestión
+                        de activos, considerando normativa interna,
+                        Normas COVENIN 2265:1997 e ISO 55000:2024.
+
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ORGANIZACIÓN
+        ================================================== -->
+
+        <section class="organizacion">
+
+            <div class="organizacion-panel">
+
+
+                <div class="organizacion-intro revelar">
+
+                    <span class="mini">
+                        Organización
+                    </span>
+
+                    <h2>
+                        Una estructura conectada
+                        con la ejecución.
+                    </h2>
+
+                    <p>
+
+                        Nuestra estructura conecta la dirección
+                        estratégica, la planificación, la
+                        supervisión y la ejecución técnica
+                        en campo.
+
+                    </p>
+
+                </div>
+
+
+                <div class="niveles">
+
+
+                    <article class="nivel revelar">
+
+                        <span class="nivel-numero">
+                            01
+                        </span>
+
+                        <h3>
+                            Dirección General
+                        </h3>
+
+                        <p>
+                            Nivel de dirección estratégica.
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="nivel revelar">
+
+                        <span class="nivel-numero">
+                            02
+                        </span>
+
+                        <h3>
+                            Recursos Humanos
+                        </h3>
+
+                        <p>
+                            Nivel de soporte institucional.
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="nivel revelar">
+
+                        <span class="nivel-numero">
+                            03
+                        </span>
+
+                        <h3>
+                            Planificación y Proyectos
+                        </h3>
+
+                        <p>
+                            Nivel de planificación y coordinación.
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="nivel revelar">
+
+                        <span class="nivel-numero">
+                            04
+                        </span>
+
+                        <h3>
+                            Supervisión de Operaciones
+                        </h3>
+
+                        <p>
+                            Conexión entre planificación
+                            y ejecución.
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="nivel revelar">
+
+                        <span class="nivel-numero">
+                            05
+                        </span>
+
+                        <h3>
+                            Técnicos y Ayudantes
+                        </h3>
+
+                        <p>
+                            Base operativa para la ejecución
+                            en campo.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PLANIFICACIÓN Y PROYECTOS
+        ================================================== -->
+
+        <section class="planificacion">
+
+            <div class="section-header revelar">
+
+                <span class="mini">
+                    Planificación y proyectos
+                </span>
+
+                <h2>
+                    El puente entre la estrategia
+                    y la ejecución.
+                </h2>
+
+                <p>
+
+                    La planificación permite conectar
+                    las decisiones estratégicas con
+                    la ejecución efectiva de los proyectos.
+
+                </p>
+
+            </div>
+
+
+            <div class="planificacion-grid">
+
+
+                <article class="plan-card revelar">
+
+                    <strong>
+                        Dirección Estratégica
+                    </strong>
+
+                    <p>
+
+                        Formulación, factibilidad y evaluación
+                        técnica de proyectos, además del diseño
+                        del Plan Maestro de Mantenimiento.
+
+                    </p>
+
+                </article>
+
+
+
+                <article class="plan-card revelar">
+
+                    <strong>
+                        Gestión Financiera
+                    </strong>
+
+                    <p>
+
+                        Validación de Análisis de Precios
+                        Unitarios, cotizaciones comerciales
+                        y seguimiento de costos.
+
+                    </p>
+
+                </article>
+
+
+
+                <article class="plan-card revelar">
+
+                    <strong>
+                        Logística y Calidad
+                    </strong>
+
+                    <p>
+
+                        Gestión de inventarios, repuestos,
+                        insumos y estandarización de protocolos
+                        para la operación.
+
+                    </p>
+
+                </article>
+
+
+
+                <article class="plan-card revelar">
+
+                    <strong>
+                        Coordinación e Indicadores
+                    </strong>
+
+                    <p>
+
+                        Enlace con supervisión de campo y
+                        seguimiento de tiempos de respuesta
+                        e indicadores de satisfacción.
+
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             COBERTURA
+        ================================================== -->
+
+        <section class="cobertura">
+
+            <div class="cobertura-card revelar">
+
+                <h2>
+                    Capacidad para atender
+                    proyectos en Venezuela.
+                </h2>
+
+                <p>
+
+                    Nuestra sede se encuentra en Maracay,
+                    Estado Aragua, Venezuela, con capacidad
+                    para atender proyectos y operaciones
+                    según los requerimientos de nuestros
+                    clientes.
+
+                </p>
+
+
+                <div class="direccion">
+
+                    CC y Profesional White Point,
+                    piso 2, oficina P2-01,
+                    detrás del CC Parque Aragua.
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CTA
+        ================================================== -->
+
+        <section class="cta">
+
+            <div class="cta-card revelar">
+
+                <h2>
+                    ¿Trabajamos juntos?
+                </h2>
+
+                <p>
+
+                    Conversemos sobre las necesidades de
+                    su empresa y encontremos una solución
+                    adecuada para su proyecto.
+
+                </p>
+
+
+                <a
+                    href="contacto.html#formulario"
+                    class="btn"
+                >
+
+                    Solicitar cotización
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="footer-inner">
+
+
+            <div class="footer-brand">
+
+                <img
+                    src="https://i.postimg.cc/L6xFm2Tt/loo-removebg-preview.png"
+                    alt="Corporación LSM"
+                >
+
+                <div>
+
+                    <strong>
+                        Corporación LSM
+                    </strong>
+
+                    <span>
+                        CORPORACION LOGÍSTICA, SERVICIO Y MANTENIMIENTO C.A
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="copyright">
+
+                ©
+                <span id="year"></span>
+                Corporación LSM.
+                Todos los derechos reservados.
+
+            </div>
+
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+
+        /* =================================================
+           MENÚ MÓVIL
+        ================================================== */
+
+        const btnMenu =
+            document.getElementById("btnMenu");
+
+        const menu =
+            document.getElementById("menu");
+
+
+        btnMenu.addEventListener(
+            "click",
+            function () {
+
+                const abierto =
+                    menu.classList.toggle("abierto");
+
+                btnMenu.setAttribute(
+                    "aria-expanded",
+                    abierto ? "true" : "false"
+                );
+
+            }
+        );
+
+
+        /* =================================================
+           CERRAR MENÚ
+        ================================================== */
+
+        document
+            .querySelectorAll("#menu a")
+            .forEach(
+                function (link) {
+
+                    link.addEventListener(
+                        "click",
+                        function () {
+
+                            menu.classList.remove("abierto");
+
+                            btnMenu.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+
+        /* =================================================
+           AÑO AUTOMÁTICO
+        ================================================== */
+
+        document
+            .getElementById("year")
+            .textContent =
+            new Date().getFullYear();
+
+
+        /* =================================================
+           EFECTO 3D
+        ================================================== */
+
+        const visualCard =
+            document.getElementById("visualCard");
+
+
+        if (
+            window.matchMedia(
+                "(hover: hover)"
+            ).matches
+        ) {
+
+            visualCard.addEventListener(
+                "mousemove",
+                function (event) {
+
+                    const rect =
+                        visualCard.getBoundingClientRect();
+
+
+                    const x =
+                        event.clientX -
+                        rect.left;
+
+
+                    const y =
+                        event.clientY -
+                        rect.top;
+
+
+                    const centerX =
+                        rect.width / 2;
+
+
+                    const centerY =
+                        rect.height / 2;
+
+
+                    const rotateY =
+                        ((x - centerX) /
+                        centerX) * 8;
+
+
+                    const rotateX =
+                        ((centerY - y) /
+                        centerY) * 8;
+
+
+                    visualCard.style.transform =
+                        `
+                        rotateY(${rotateY}deg)
+                        rotateX(${rotateX}deg)
+                        translateY(-8px)
+                        `;
+
+                }
+            );
+
+
+            visualCard.addEventListener(
+                "mouseleave",
+                function () {
+
+                    visualCard.style.transform =
+                        "rotateY(-9deg) rotateX(6deg)";
+
+                }
+            );
+
+        }
+
+
+        /* =================================================
+           ANIMACIÓN AL HACER SCROLL
+        ================================================== */
+
+        const elementos =
+            document.querySelectorAll(
+                ".revelar"
+            );
+
+
+        if (
+            "IntersectionObserver"
+            in window
+        ) {
+
+            const observer =
+                new IntersectionObserver(
+                    function (entries) {
+
+                        entries.forEach(
+                            function (entry) {
+
+                                if (
+                                    entry.isIntersecting
+                                ) {
+
+                                    entry.target
+                                        .classList
+                                        .add("visible");
+
+                                    observer.unobserve(
+                                        entry.target
+                                    );
+
+                                }
+
+                            }
+                        );
+
+                    },
+                    {
+                        threshold: 0.12
+                    }
+                );
+
+
+            elementos.forEach(
+                function (elemento) {
+
+                    observer.observe(
+                        elemento
+                    );
+
+                }
+            );
+
+        } else {
+
+            elementos.forEach(
+                function (elemento) {
+
+                    elemento.classList.add(
+                        "visible"
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* =================================================
+           RETARDO PROGRESIVO
+        ================================================== */
+
+        document
+            .querySelectorAll(
+                ".historia-card, .filosofia-card, .nivel, .plan-card"
+            )
+            .forEach(
+                function (elemento, index) {
+
+                    elemento.style.transitionDelay =
+                        `${(index % 5) * 70}ms`;
+
+                }
+            );
+
+
+    </script>
+
+
+</body>
+
+</html>

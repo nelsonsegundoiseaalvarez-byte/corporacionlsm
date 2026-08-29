@@ -1,0 +1,3147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <!-- =====================================================
+         CONFIGURACIÓN SEO
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Servicios | Corporación LSM
+    </title>
+
+    <meta name="description"
+          content="Conoce las unidades estratégicas de Corporación LSM: servicios generales, movilidad vertical, telecomunicaciones, seguridad integral, importación, exportación, logística, sistemas contra incendio, control de acceso y capacitación técnica.">
+
+    <meta name="keywords"
+          content="servicios de mantenimiento Venezuela, mantenimiento industrial Venezuela, movilidad vertical, ascensores, montacargas, telecomunicaciones, seguridad integral, sistemas contra incendio, control de acceso, logística, importación, exportación, capacitación técnica">
+
+    <meta name="author"
+          content="Corporación Logística, Servicio y Mantenimiento C.A.">
+
+    <meta name="robots"
+          content="index, follow">
+
+
+    <!-- =====================================================
+         FAVICON
+    ====================================================== -->
+
+    <link rel="icon"
+          type="image/png"
+          href="https://i.postimg.cc/L6xFm2Tt/loo-removebg-preview.png">
+
+
+<style>
+
+/* =========================================================
+   VARIABLES CORPORATIVAS
+========================================================= */
+
+:root {
+
+    --azul: #075dcc;
+
+    --azul-oscuro: #063b83;
+
+    --azul-profundo: #031f49;
+
+    --azul-claro: #eaf3ff;
+
+    --verde: #00a96b;
+
+    --verde-oscuro: #008653;
+
+    --verde-claro: #11c985;
+
+    --blanco: #ffffff;
+
+    --gris-fondo: #f5f8fc;
+
+    --gris-borde:
+        rgba(7, 93, 204, .11);
+
+    --texto: #101828;
+
+    --texto-secundario: #667085;
+
+    --sombra:
+        0 20px 50px
+        rgba(3, 31, 73, .09);
+
+    --sombra-hover:
+        0 30px 70px
+        rgba(3, 31, 73, .16);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: var(--texto);
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5f9ff 0%,
+            #ffffff 48%,
+            #effbf6 100%
+        );
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================================
+   DECORACIÓN DEL FONDO
+========================================================= */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    width: 500px;
+
+    height: 500px;
+
+    top: -250px;
+
+    right: -200px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,169,107,.12),
+            transparent 70%
+        );
+
+    z-index: -1;
+
+}
+
+
+body::after {
+
+    content: "";
+
+    position: fixed;
+
+    width: 550px;
+
+    height: 550px;
+
+    bottom: -300px;
+
+    left: -250px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(7,93,204,.10),
+            transparent 70%
+        );
+
+    z-index: -1;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background:
+        rgba(255,255,255,.90);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    border-bottom:
+        1px solid
+        rgba(7,93,204,.08);
+
+}
+
+
+.navbar {
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    min-height: 78px;
+
+    padding:
+        10px 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    text-decoration: none;
+
+}
+
+
+/*
+   IMPORTANTE:
+   Se utiliza el PNG transparente proporcionado por el cliente.
+   El contenedor es redondeado para evitar cualquier apariencia
+   de borde cuadrado.
+*/
+
+.logo-image-wrapper {
+
+    width: 55px;
+
+    height: 55px;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+
+    background:
+        transparent;
+
+}
+
+
+.logo img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    max-width: 100%;
+
+    max-height: 100%;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    border-radius: 18px;
+
+    filter:
+        drop-shadow(
+            0 7px 12px
+            rgba(7,93,204,.20)
+        );
+
+    transition:
+        transform .3s ease;
+
+}
+
+
+.logo:hover img {
+
+    transform:
+        rotate(-5deg)
+        scale(1.05);
+
+}
+
+
+.logo-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.logo-text strong {
+
+    color: var(--azul);
+
+    font-size: 18px;
+
+    line-height: 1.1;
+
+}
+
+
+.logo-text span {
+
+    color: var(--texto-secundario);
+
+    font-size: 9px;
+
+    letter-spacing: .7px;
+
+    margin-top: 4px;
+
+}
+
+
+/* =========================================================
+   NAVEGACIÓN
+========================================================= */
+
+nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+}
+
+
+nav a {
+
+    text-decoration: none;
+
+    color: #344054;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    padding:
+        10px 14px;
+
+    border-radius: 10px;
+
+    transition:
+        .25s ease;
+
+}
+
+
+nav a:hover {
+
+    color: var(--azul);
+
+    background:
+        rgba(7,93,204,.07);
+
+}
+
+
+nav a.activo {
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--azul),
+            var(--azul-oscuro)
+        );
+
+    box-shadow:
+        0 8px 20px
+        rgba(7,93,204,.22);
+
+}
+
+
+.btn-menu {
+
+    display: none;
+
+    width: 43px;
+
+    height: 43px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: var(--azul);
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding:
+        80px 25px 65px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.05fr .95fr;
+
+    align-items: center;
+
+    gap: 60px;
+
+}
+
+
+.hero-content {
+
+    animation:
+        aparecer .7s ease both;
+
+}
+
+
+.etiqueta {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding:
+        8px 16px;
+
+    border-radius: 50px;
+
+    background:
+        rgba(7,93,204,.08);
+
+    color: var(--azul);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+}
+
+
+.etiqueta::before {
+
+    content: "";
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        var(--verde);
+
+    box-shadow:
+        0 0 0 5px
+        rgba(0,169,107,.10);
+
+}
+
+
+.hero h1 {
+
+    margin-top: 22px;
+
+    font-size:
+        clamp(42px, 6vw, 70px);
+
+    line-height: 1.02;
+
+    letter-spacing: -3px;
+
+    color:
+        var(--azul-profundo);
+
+}
+
+
+.hero h1 span {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--azul),
+            var(--verde)
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+}
+
+
+.hero p {
+
+    margin-top: 24px;
+
+    max-width: 680px;
+
+    color:
+        var(--texto-secundario);
+
+    font-size: 17px;
+
+    line-height: 1.75;
+
+}
+
+
+/* =========================================================
+   PANEL 3D DEL HERO
+========================================================= */
+
+.hero-visual {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    perspective: 1000px;
+
+}
+
+
+.visual-card {
+
+    position: relative;
+
+    width: 350px;
+
+    height: 350px;
+
+    border-radius: 70px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #edf4fa
+        );
+
+    border:
+        1px solid
+        rgba(7,93,204,.12);
+
+    box-shadow:
+        25px 35px 65px
+        rgba(3,31,73,.14),
+
+        inset
+        0 1px 0
+        rgba(255,255,255,.95);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    transform:
+        rotateY(-9deg)
+        rotateX(6deg);
+
+    transition:
+        transform .45s ease;
+
+    overflow: visible;
+
+}
+
+
+.visual-card:hover {
+
+    transform:
+        rotateY(0)
+        rotateX(0)
+        translateY(-8px);
+
+}
+
+
+/*
+   LOGO PRINCIPAL DEL HERO
+
+   No se fuerza una relación rectangular.
+   Se conserva la proporción original del PNG.
+*/
+
+.visual-card img {
+
+    display: block;
+
+    width: auto;
+
+    height: auto;
+
+    max-width: 215px;
+
+    max-height: 215px;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    border-radius: 28px;
+
+    filter:
+        drop-shadow(
+            0 25px 25px
+            rgba(3,31,73,.20)
+        );
+
+}
+
+
+/* =========================================================
+   ETIQUETAS FLOTANTES
+========================================================= */
+
+.floating-tag {
+
+    position: absolute;
+
+    padding:
+        10px 14px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,.94);
+
+    border:
+        1px solid
+        rgba(7,93,204,.10);
+
+    box-shadow:
+        0 15px 30px
+        rgba(3,31,73,.12);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    color:
+        var(--azul-profundo);
+
+}
+
+
+.tag-one {
+
+    top: 35px;
+
+    left: -30px;
+
+}
+
+
+.tag-two {
+
+    right: -25px;
+
+    bottom: 55px;
+
+}
+
+
+.tag-two span {
+
+    color:
+        var(--verde);
+
+}
+
+
+/* =========================================================
+   CONTENEDOR
+========================================================= */
+
+.contenedor {
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding:
+        15px 25px 90px;
+
+}
+
+
+/* =========================================================
+   TITULOS
+========================================================= */
+
+.titulo-seccion {
+
+    max-width: 760px;
+
+    margin:
+        65px auto 40px;
+
+    text-align: center;
+
+}
+
+
+.titulo-seccion .mini {
+
+    color:
+        var(--verde);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+
+}
+
+
+.titulo-seccion h2 {
+
+    margin-top: 9px;
+
+    color:
+        var(--azul-profundo);
+
+    font-size:
+        clamp(30px, 4vw, 45px);
+
+    line-height: 1.15;
+
+    letter-spacing: -1.5px;
+
+}
+
+
+.titulo-seccion p {
+
+    margin-top: 13px;
+
+    color:
+        var(--texto-secundario);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   GRID DE SERVICIOS
+========================================================= */
+
+.servicios-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 22px;
+
+}
+
+
+/* =========================================================
+   TARJETA DE SERVICIO
+========================================================= */
+
+.servicio {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+        32px;
+
+    border-radius: 26px;
+
+    background:
+        rgba(255,255,255,.94);
+
+    border:
+        1px solid
+        var(--gris-borde);
+
+    box-shadow:
+        var(--sombra);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+
+.servicio:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        var(--sombra-hover);
+
+}
+
+
+/* =========================================================
+   LÍNEA SUPERIOR
+========================================================= */
+
+.servicio::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    width: 100%;
+
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--azul),
+            var(--verde)
+        );
+
+}
+
+
+/* =========================================================
+   CÍRCULO DECORATIVO
+========================================================= */
+
+.servicio::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+
+    height: 180px;
+
+    top: -95px;
+
+    right: -75px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(7,93,204,.09),
+            transparent 70%
+        );
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   CABECERA TARJETA
+========================================================= */
+
+.servicio-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.icono {
+
+    flex-shrink: 0;
+
+    width: 65px;
+
+    height: 65px;
+
+    border-radius: 19px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+    font-size: 29px;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--azul),
+            var(--azul-oscuro)
+        );
+
+    box-shadow:
+        0 13px 25px
+        rgba(7,93,204,.22);
+
+    transition:
+        transform .35s ease;
+
+}
+
+
+.servicio:hover .icono {
+
+    transform:
+        rotate(-5deg)
+        translateY(-3px);
+
+}
+
+
+.servicio:nth-child(2)
+.icono,
+.servicio:nth-child(5)
+.icono,
+.servicio:nth-child(7)
+.icono {
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--verde),
+            var(--verde-oscuro)
+        );
+
+    box-shadow:
+        0 13px 25px
+        rgba(0,169,107,.20);
+
+}
+
+
+.servicio h3 {
+
+    color:
+        var(--azul-profundo);
+
+    font-size: 20px;
+
+    line-height: 1.25;
+
+}
+
+
+.servicio .numero {
+
+    display: block;
+
+    margin-bottom: 3px;
+
+    color:
+        var(--texto-secundario);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================================================
+   CONTENIDO
+========================================================= */
+
+.servicio-contenido {
+
+    margin-top: 22px;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.servicio-contenido p {
+
+    color:
+        var(--texto-secundario);
+
+    font-size: 14px;
+
+    line-height: 1.75;
+
+}
+
+
+/* =========================================================
+   LISTA
+========================================================= */
+
+.lista {
+
+    list-style: none;
+
+    margin-top: 17px;
+
+    display: grid;
+
+    gap: 9px;
+
+}
+
+
+.lista li {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    color:
+        #475467;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+}
+
+
+.lista li::before {
+
+    content: "✓";
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 19px;
+
+    height: 19px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0,169,107,.10);
+
+    color:
+        var(--verde);
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+}
+
+
+/* =========================================================
+   TARJETA LOGÍSTICA TRANSVERSAL
+========================================================= */
+
+.servicio.destacado {
+
+    grid-column:
+        1 / -1;
+
+    display: grid;
+
+    grid-template-columns:
+        75px 1fr;
+
+    gap: 20px;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--azul-profundo),
+            #075dcc
+        );
+
+    color: white;
+
+    border: none;
+
+    box-shadow:
+        0 25px 55px
+        rgba(3,31,73,.20);
+
+}
+
+
+.servicio.destacado::before {
+
+    background:
+        var(--verde-claro);
+
+}
+
+
+.servicio.destacado::after {
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.10),
+            transparent 70%
+        );
+
+}
+
+
+.servicio.destacado .icono {
+
+    background:
+        rgba(255,255,255,.12);
+
+    box-shadow:
+        none;
+
+    border:
+        1px solid
+        rgba(255,255,255,.14);
+
+}
+
+
+.servicio.destacado h3 {
+
+    color: white;
+
+}
+
+
+.servicio.destacado .numero {
+
+    color:
+        rgba(255,255,255,.55);
+
+}
+
+
+.servicio.destacado p {
+
+    color:
+        rgba(255,255,255,.76);
+
+}
+
+
+.servicio.destacado .lista li {
+
+    color:
+        rgba(255,255,255,.82);
+
+}
+
+
+.servicio.destacado .lista li::before {
+
+    background:
+        rgba(255,255,255,.12);
+
+    color:
+        var(--verde-claro);
+
+}
+
+
+/* =========================================================
+   BARRA DE PROPUESTA
+========================================================= */
+
+.propuesta {
+
+    margin-top: 75px;
+
+    padding:
+        45px 35px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(7,93,204,.07),
+            rgba(0,169,107,.08)
+        );
+
+    border:
+        1px solid
+        rgba(7,93,204,.09);
+
+}
+
+
+.propuesta-header {
+
+    text-align: center;
+
+    max-width: 720px;
+
+    margin:
+        0 auto 35px;
+
+}
+
+
+.propuesta-header h2 {
+
+    color:
+        var(--azul-profundo);
+
+    font-size:
+        clamp(28px, 4vw, 40px);
+
+    letter-spacing:
+        -1px;
+
+}
+
+
+.propuesta-header p {
+
+    margin-top: 10px;
+
+    color:
+        var(--texto-secundario);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   PILARES
+========================================================= */
+
+.pilares {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.pilar {
+
+    padding:
+        22px 18px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,.90);
+
+    border:
+        1px solid
+        rgba(7,93,204,.08);
+
+    text-align: center;
+
+    transition:
+        .3s ease;
+
+}
+
+
+.pilar:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 15px 30px
+        rgba(3,31,73,.09);
+
+}
+
+
+.pilar strong {
+
+    display: block;
+
+    color:
+        var(--azul);
+
+    font-size: 14px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.pilar span {
+
+    color:
+        var(--texto-secundario);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta {
+
+    margin-top: 65px;
+
+    padding:
+        48px 30px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--azul-profundo),
+            var(--azul)
+        );
+
+    box-shadow:
+        0 25px 60px
+        rgba(3,31,73,.20);
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.cta::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+
+    height: 300px;
+
+    right: -120px;
+
+    top: -190px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    box-shadow:
+        0 0 0 45px
+        rgba(255,255,255,.025),
+
+        0 0 0 90px
+        rgba(255,255,255,.02);
+
+}
+
+
+.cta-content {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.cta h2 {
+
+    color: white;
+
+    font-size:
+        clamp(27px, 4vw, 40px);
+
+    letter-spacing:
+        -1px;
+
+}
+
+
+.cta p {
+
+    max-width: 650px;
+
+    margin:
+        12px auto 25px;
+
+    color:
+        rgba(255,255,255,.74);
+
+    line-height: 1.7;
+
+    font-size: 14px;
+
+}
+
+
+.btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    padding:
+        14px 24px;
+
+    border-radius: 13px;
+
+    background:
+        white;
+
+    color:
+        var(--azul);
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    transition:
+        .3s ease;
+
+    box-shadow:
+        0 12px 25px
+        rgba(0,0,0,.12);
+
+}
+
+
+.btn:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 18px 30px
+        rgba(0,0,0,.18);
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    background:
+        var(--azul-profundo);
+
+    color: white;
+
+    padding:
+        35px 25px;
+
+}
+
+
+.footer-inner {
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+}
+
+
+.footer-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.footer-brand-image {
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+
+    background:
+        transparent;
+
+}
+
+
+.footer-brand img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    max-width: 100%;
+
+    max-height: 100%;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    border-radius: 16px;
+
+}
+
+
+.footer-brand span {
+
+    color:
+        rgba(255,255,255,.72);
+
+    font-size: 13px;
+
+}
+
+
+.copyright {
+
+    color:
+        rgba(255,255,255,.50);
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   ANIMACIONES
+========================================================= */
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+.revelar {
+
+    opacity: 0;
+
+    transform:
+        translateY(25px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+
+}
+
+
+.revelar.visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .hero {
+
+        grid-template-columns:
+            1fr;
+
+        text-align: center;
+
+    }
+
+
+    .hero p {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+
+    .hero-visual {
+
+        order: -1;
+
+    }
+
+
+    .visual-card {
+
+        width: 280px;
+
+        height: 280px;
+
+    }
+
+
+    .visual-card img {
+
+        max-width: 175px;
+
+        max-height: 175px;
+
+    }
+
+
+    .pilares {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =========================================================
+   MÓVIL
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+
+        padding:
+            10px 17px;
+
+    }
+
+
+    .logo-image-wrapper {
+
+        width: 48px;
+
+        height: 48px;
+
+        border-radius: 15px;
+
+    }
+
+
+    .logo img {
+
+        border-radius: 15px;
+
+    }
+
+
+    .logo-text strong {
+
+        font-size: 15px;
+
+    }
+
+
+    .logo-text span {
+
+        font-size: 7px;
+
+    }
+
+
+    .btn-menu {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+    }
+
+
+    nav {
+
+        display: none;
+
+        position: absolute;
+
+        top: 72px;
+
+        left: 15px;
+
+        right: 15px;
+
+        padding: 12px;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        background:
+            rgba(255,255,255,.97);
+
+        backdrop-filter:
+            blur(15px);
+
+        border-radius: 18px;
+
+        box-shadow:
+            0 20px 50px
+            rgba(3,31,73,.15);
+
+        border:
+            1px solid
+            var(--gris-borde);
+
+    }
+
+
+    nav.abierto {
+
+        display: flex;
+
+    }
+
+
+    nav a {
+
+        text-align:
+            center;
+
+    }
+
+
+    .hero {
+
+        padding:
+            50px 18px 40px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            42px;
+
+        letter-spacing:
+            -2px;
+
+    }
+
+
+    .hero p {
+
+        font-size:
+            15px;
+
+    }
+
+
+    .visual-card {
+
+        width: 230px;
+
+        height: 230px;
+
+        border-radius: 50px;
+
+    }
+
+
+    .visual-card img {
+
+        max-width: 145px;
+
+        max-height: 145px;
+
+        border-radius: 22px;
+
+    }
+
+
+    .floating-tag {
+
+        font-size: 9px;
+
+        padding:
+            8px 10px;
+
+    }
+
+
+    .tag-one {
+
+        left:
+            -10px;
+
+        top:
+            20px;
+
+    }
+
+
+    .tag-two {
+
+        right:
+            -10px;
+
+        bottom:
+            30px;
+
+    }
+
+
+    .contenedor {
+
+        padding:
+            10px 17px 60px;
+
+    }
+
+
+    .servicios-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .servicio {
+
+        padding:
+            25px 20px;
+
+    }
+
+
+    .servicio.destacado {
+
+        grid-column:
+            auto;
+
+        grid-template-columns:
+            1fr;
+
+        text-align:
+            center;
+
+    }
+
+
+    .servicio.destacado .icono {
+
+        margin:
+            auto;
+
+    }
+
+
+    .pilares {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .propuesta {
+
+        padding:
+            35px 20px;
+
+    }
+
+
+    .cta {
+
+        padding:
+            38px 20px;
+
+    }
+
+
+    .footer-inner {
+
+        flex-direction:
+            column;
+
+        text-align:
+            center;
+
+    }
+
+
+    .footer-brand {
+
+        justify-content:
+            center;
+
+    }
+
+}
+
+
+/* =========================================================
+   MÓVILES PEQUEÑOS
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+
+        font-size:
+            36px;
+
+    }
+
+
+    .titulo-seccion h2 {
+
+        font-size:
+            29px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header>
+
+    <div class="navbar">
+
+
+        <a
+            href="index.html"
+            class="logo">
+
+
+            <div class="logo-image-wrapper">
+
+                <img
+                    src="https://i.postimg.cc/L6xFm2Tt/loo-removebg-preview.png"
+                    alt="Logo Corporación LSM">
+
+            </div>
+
+
+            <div class="logo-text">
+
+                <strong>
+                    Corporación LSM
+                </strong>
+
+                <span>
+                    CORPORACION LOGÍSTICA, SERVICIO Y MANTENIMIENTO C.A
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <button
+            class="btn-menu"
+            id="btnMenu"
+            aria-label="Abrir menú">
+
+            ☰
+
+        </button>
+
+
+        <nav id="menu">
+
+            <a href="index.html">
+                Inicio
+            </a>
+
+            <a
+                href="informacion.html"
+                class="activo">
+
+                Servicios
+
+            </a>
+
+            <a href="somos.html">
+                Nosotros
+            </a>
+
+            <a href="contacto.html">
+                Contacto
+            </a>
+
+            <a href="contacto.html#formulario">
+                Solicitar cotización
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+
+    <div class="hero-content">
+
+        <span class="etiqueta">
+            Unidades estratégicas de negocio
+        </span>
+
+
+        <h1>
+
+            Soluciones
+            <span>integrales</span>
+            para cada desafío.
+
+        </h1>
+
+
+        <p>
+
+            Integramos experiencia, planificación,
+            tecnología y capacidad operativa para
+            ofrecer servicios especializados que
+            contribuyen a la continuidad y eficiencia
+            de las operaciones de nuestros clientes.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="hero-visual">
+
+        <div
+            class="visual-card"
+            id="visualCard">
+
+
+            <span class="floating-tag tag-one">
+                7 unidades estratégicas
+            </span>
+
+
+            <img
+                src="https://i.postimg.cc/L6xFm2Tt/loo-removebg-preview.png"
+                alt="Corporación LSM - Servicios integrales">
+
+
+            <span class="floating-tag tag-two">
+
+                <span>●</span>
+
+                Operaciones integrales
+
+            </span>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     SERVICIOS
+========================================================= -->
+
+<main class="contenedor">
+
+
+    <section>
+
+        <div class="titulo-seccion">
+
+            <span class="mini">
+                Lo que hacemos
+            </span>
+
+            <h2>
+                Nuestras unidades
+                estratégicas
+            </h2>
+
+            <p>
+
+                Contamos con diferentes áreas de
+                especialización orientadas a responder
+                necesidades técnicas, operativas y
+                logísticas de nuestros clientes.
+
+            </p>
+
+        </div>
+
+
+        <div class="servicios-grid">
+
+
+            <!-- =================================================
+                 UNIDAD 01
+            ================================================== -->
+
+            <article class="servicio revelar">
+
+                <div class="servicio-header">
+
+                    <div class="icono">
+                        ⚙
+                    </div>
+
+                    <div>
+
+                        <span class="numero">
+                            UNIDAD 01
+                        </span>
+
+                        <h3>
+                            Servicios Generales
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="servicio-contenido">
+
+                    <p>
+
+                        Mantenimiento optimizado y
+                        preventivo de infraestructuras
+                        generales, edificación y áreas
+                        corporativas.
+
+                    </p>
+
+
+                    <ul class="lista">
+
+                        <li>
+                            Mantenimiento preventivo.
+                        </li>
+
+                        <li>
+                            Mantenimiento de infraestructura.
+                        </li>
+
+                        <li>
+                            Atención de instalaciones
+                            corporativas.
+                        </li>
+
+                        <li>
+                            Optimización de condiciones
+                            operativas.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 UNIDAD 02
+            ================================================== -->
+
+            <article class="servicio revelar">
+
+                <div class="servicio-header">
+
+                    <div class="icono">
+                        ↕
+                    </div>
+
+                    <div>
+
+                        <span class="numero">
+                            UNIDAD 02
+                        </span>
+
+                        <h3>
+                            Movilidad Vertical
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="servicio-contenido">
+
+                    <p>
+
+                        Soluciones avanzadas e integrales
+                        en ascensores, montacargas y
+                        transporte vertical.
+
+                    </p>
+
+
+                    <ul class="lista">
+
+                        <li>
+                            Ascensores.
+                        </li>
+
+                        <li>
+                            Montacargas.
+                        </li>
+
+                        <li>
+                            Mantenimiento especializado.
+                        </li>
+
+                        <li>
+                            Atención técnica de sistemas
+                            de movilidad vertical.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 UNIDAD 03
+            ================================================== -->
+
+            <article class="servicio revelar">
+
+                <div class="servicio-header">
+
+                    <div class="icono">
+                        ◉
+                    </div>
+
+                    <div>
+
+                        <span class="numero">
+                            UNIDAD 03
+                        </span>
+
+                        <h3>
+                            Telecomunicaciones
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="servicio-contenido">
+
+                    <p>
+
+                        Infraestructura crítica, redes
+                        de transmisión y conectividad
+                        corporativa de vanguardia.
+
+                    </p>
+
+
+                    <ul class="lista">
+
+                        <li>
+                            Infraestructura de
+                            telecomunicaciones.
+                        </li>
+
+                        <li>
+                            Redes de transmisión.
+                        </li>
+
+                        <li>
+                            Conectividad corporativa.
+                        </li>
+
+                        <li>
+                            Soluciones para infraestructura
+                            crítica.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 UNIDAD 04
+            ================================================== -->
+
+            <article class="servicio revelar">
+
+                <div class="servicio-header">
+
+                    <div class="icono">
+                        ◇
+                    </div>
+
+                    <div>
+
+                        <span class="numero">
+                            UNIDAD 04
+                        </span>
+
+                        <h3>
+                            Seguridad Integral
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="servicio-contenido">
+
+                    <p>
+
+                        Sistemas orientados a la protección
+                        patrimonial, monitoreo electrónico,
+                        gestión estratégica de riesgos, sistemas contra incendio y control de acceso.
+
+                    </p>
+
+
+                    <ul class="lista">
+
+                        <li>
+                            Protección patrimonial.
+                        </li>
+
+                        <li>
+                            Monitoreo electrónico.
+                        </li>
+
+                        <li>
+                            Gestión estratégica
+                            de riesgos.
+                        </li>
+
+                        <li>
+                            Sistemas integrales
+                            de protección.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 UNIDAD 05
+            ================================================== -->
+
+            <article class="servicio revelar">
+
+                <div class="servicio-header">
+
+                    <div class="icono">
+                        ⇄
+                    </div>
+
+                    <div>
+
+                        <span class="numero">
+                            UNIDAD 05
+                        </span>
+
+                        <h3>
+                            Importación / Exportación
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="servicio-contenido">
+
+                    <p>
+
+                        Operaciones logísticas
+                        internacionales, agenciamiento
+                        aduanal y comercio exterior
+                        eficiente.
+
+                    </p>
+
+
+                    <ul class="lista">
+
+                        <li>
+                            Operaciones logísticas
+                            internacionales.
+                        </li>
+
+                        <li>
+                            Agenciamiento aduanal.
+                        </li>
+
+                        <li>
+                            Comercio exterior.
+                        </li>
+
+                        <li>
+                            Gestión de suministros
+                            internacionales.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 UNIDAD 06
+            ================================================== -->
+
+            <article class="servicio revelar">
+
+                <div class="servicio-header">
+
+                    <div class="icono">
+                        ◈
+                    </div>
+
+                    <div>
+
+                        <span class="numero">
+                            UNIDAD 06
+                        </span>
+
+                        <h3>
+                            Aula Educativa
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="servicio-contenido">
+
+                    <p>
+
+                        Formación técnica, capacitación
+                        especializada y desarrollo del
+                        talento.
+
+                    </p>
+
+
+                    <ul class="lista">
+
+                        <li>
+                            Formación técnica.
+                        </li>
+
+                        <li>
+                            Capacitación especializada.
+                        </li>
+
+                        <li>
+                            Desarrollo del talento.
+                        </li>
+
+                        <li>
+                            Programas orientados a
+                            necesidades profesionales.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 LOGÍSTICA TRANSVERSAL
+            ================================================== -->
+
+            <article
+                class="servicio destacado revelar">
+
+
+                <div class="icono">
+                    ▣
+                </div>
+
+
+                <div>
+
+                    <span class="numero">
+                        UNIDAD 7
+                    </span>
+
+
+                    <h3>
+                        Logística
+                    </h3>
+
+
+                    <div
+                        class="servicio-contenido">
+
+
+                        <p>
+
+                            Suministro oportuno de
+                            materiales e insumos para
+                            proyectos, asegurando
+                            abastecimiento, control y
+                            entrega eficiente en cada obra.
+
+                        </p>
+
+
+                        <ul class="lista">
+
+                            <li>
+                                Gestión de materiales
+                                e insumos.
+                            </li>
+
+                            <li>
+                                Abastecimiento para
+                                proyectos.
+                            </li>
+
+                            <li>
+                                Control de suministros.
+                            </li>
+
+                            <li>
+                                Entrega eficiente
+                                en cada obra.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROPUESTA DE VALOR
+    ====================================================== -->
+
+    <section class="propuesta">
+
+
+        <div class="propuesta-header">
+
+            <h2>
+                Una operación conectada
+            </h2>
+
+            <p>
+
+                Nuestra propuesta integra diferentes
+                capacidades para ofrecer respuestas
+                coordinadas, eficientes y sostenibles
+                frente a las necesidades de cada proyecto.
+
+            </p>
+
+        </div>
+
+
+        <div class="pilares">
+
+
+            <div class="pilar">
+
+                <strong>
+                    Planificación
+                </strong>
+
+                <span>
+                    Organización estratégica
+                    de cada proyecto.
+                </span>
+
+            </div>
+
+
+            <div class="pilar">
+
+                <strong>
+                    Experiencia
+                </strong>
+
+                <span>
+                    Conocimiento técnico
+                    y operativo.
+                </span>
+
+            </div>
+
+
+            <div class="pilar">
+
+                <strong>
+                    Seguridad
+                </strong>
+
+                <span>
+                    Gestión orientada a
+                    operaciones seguras.
+                </span>
+
+            </div>
+
+
+            <div class="pilar">
+
+                <strong>
+                    Eficiencia
+                </strong>
+
+                <span>
+                    Optimización de recursos
+                    y procesos.
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CTA
+    ====================================================== -->
+
+    <section class="cta">
+
+        <div class="cta-content">
+
+            <h2>
+                ¿Necesitas una solución
+                para tu proyecto?
+            </h2>
+
+
+            <p>
+
+                Cuéntanos qué necesitas y nuestro
+                equipo podrá evaluar tu requerimiento
+                para desarrollar una propuesta adecuada.
+
+            </p>
+
+
+            <a
+                href="contacto.html#formulario"
+                class="btn">
+
+                Solicitar cotización
+                →
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="footer-inner">
+
+
+        <div class="footer-brand">
+
+
+            <div class="footer-brand-image">
+
+                <img
+                    src="https://i.postimg.cc/L6xFm2Tt/loo-removebg-preview.png"
+                    alt="Corporación LSM">
+
+            </div>
+
+
+            <span>
+
+                Corporación Logística,
+                Servicio y Mantenimiento C.A.
+
+            </span>
+
+        </div>
+
+
+        <div class="copyright">
+
+            ©
+            <span id="year"></span>
+            Corporación LSM.
+            Todos los derechos reservados.
+
+        </div>
+
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+
+/* =========================================================
+   MENÚ MÓVIL
+========================================================= */
+
+const btnMenu =
+    document.getElementById("btnMenu");
+
+const menu =
+    document.getElementById("menu");
+
+
+btnMenu.addEventListener(
+    "click",
+    function () {
+
+        menu.classList.toggle("abierto");
+
+    }
+);
+
+
+/* =========================================================
+   CERRAR MENÚ AL SELECCIONAR
+========================================================= */
+
+document
+    .querySelectorAll("#menu a")
+    .forEach(function(link) {
+
+        link.addEventListener(
+            "click",
+            function() {
+
+                menu.classList.remove("abierto");
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   AÑO AUTOMÁTICO
+========================================================= */
+
+document
+    .getElementById("year")
+    .textContent =
+    new Date().getFullYear();
+
+
+/* =========================================================
+   EFECTO 3D DEL PANEL
+========================================================= */
+
+const visualCard =
+    document.getElementById("visualCard");
+
+
+if (
+    window.matchMedia(
+        "(hover: hover)"
+    ).matches
+) {
+
+
+    visualCard.addEventListener(
+        "mousemove",
+        function(event) {
+
+
+            const rect =
+                visualCard.getBoundingClientRect();
+
+
+            const x =
+                event.clientX -
+                rect.left;
+
+
+            const y =
+                event.clientY -
+                rect.top;
+
+
+            const centerX =
+                rect.width / 2;
+
+
+            const centerY =
+                rect.height / 2;
+
+
+            const rotateY =
+                ((x - centerX) /
+                centerX) * 8;
+
+
+            const rotateX =
+                ((centerY - y) /
+                centerY) * 8;
+
+
+            visualCard.style.transform =
+                `
+                rotateY(${rotateY}deg)
+                rotateX(${rotateX}deg)
+                translateY(-8px)
+                `;
+
+        }
+    );
+
+
+    visualCard.addEventListener(
+        "mouseleave",
+        function() {
+
+            visualCard.style.transform =
+                "rotateY(-9deg) rotateX(6deg)";
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   ANIMACIÓN AL HACER SCROLL
+========================================================= */
+
+const elementos =
+    document.querySelectorAll(
+        ".revelar"
+    );
+
+
+const observer =
+    new IntersectionObserver(
+        function(entries) {
+
+
+            entries.forEach(
+                function(entry) {
+
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+
+                        entry.target
+                            .classList
+                            .add("visible");
+
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+
+elementos.forEach(
+    function(elemento) {
+
+        observer.observe(
+            elemento
+        );
+
+    }
+);
+
+
+/* =========================================================
+   EFECTO SUAVE EN LOS PILARES
+========================================================= */
+
+const pilares =
+    document.querySelectorAll(
+        ".pilar"
+    );
+
+
+pilares.forEach(
+    function(pilar, index) {
+
+        pilar.style.transitionDelay =
+            `${index * 80}ms`;
+
+    }
+);
+
+
+</script>
+
+
+</body>
+
+</html>
